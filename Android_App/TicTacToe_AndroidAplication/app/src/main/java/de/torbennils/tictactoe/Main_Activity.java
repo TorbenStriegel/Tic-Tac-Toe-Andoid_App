@@ -1,5 +1,6 @@
 package de.torbennils.tictactoe;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 public class Main_Activity extends AppCompatActivity {
 
@@ -25,6 +27,14 @@ public class Main_Activity extends AppCompatActivity {
                 Snackbar.make(view, "© Nils und Torben", Snackbar.LENGTH_LONG).setAction("Action", null).show();
             }
         });
+
+        ((Button)findViewById(R.id.buttonSpiel_1)).setOnClickListener(new View.OnClickListener() { // Button Los geht´s (Start)
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
     }
 
     @Override
