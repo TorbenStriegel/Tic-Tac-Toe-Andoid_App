@@ -6,7 +6,7 @@ public class FromZeileSpalteIntoButton {
 	private static String name = "Name";
 	
 	
-	private static String umrechnen(int zeile_üb, int spalte_üb){
+	public static String umrechnen(int zeile_üb, int spalte_üb){
 		zeile = zeile_üb;
 		spalte = spalte_üb;
 		if (zeile ==0 &&spalte==0){

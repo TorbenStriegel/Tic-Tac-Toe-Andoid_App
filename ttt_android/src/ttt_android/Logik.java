@@ -69,7 +69,7 @@ public class Logik {
 	}
 
 
-	public void setzen(int zeile_setzen, int spalte_setzen){
+	private void setzen(int zeile_setzen, int spalte_setzen){
 		
 			if (zustand==0) {
 				spieler_1.setString(array_spielfeld);
@@ -85,14 +85,14 @@ public class Logik {
 		
 	}
 	
-	public void zeichnen_spieler(int zeile_zeichnen, int spalte_zeichnen){
+	private void zeichnen_spieler(int zeile_zeichnen, int spalte_zeichnen){
 		
 		test.setzeichnen(zeile_zeichnen, spalte_zeichnen);
 	}
 	
 	
 	
-	public boolean isTHEREaKI(){
+	private boolean isTHEREaKI(){
 		if(spieler_1 instanceof Ki){
 			return true;
 		}else{
@@ -101,7 +101,7 @@ public class Logik {
 		
 	}
 	
-	public boolean isValid(int zeile_test,int spalte_test ){
+	private boolean isValid(int zeile_test,int spalte_test ){
 		if(array_spielfeld[zeile_test][spalte_test].equals(" ")||array_spielfeld[zeile_test][spalte_test].equals("")){
 			return true;
 		}else{
@@ -116,7 +116,7 @@ public class Logik {
 		return gewonnen_boolean;
 	}
 	
-	public boolean gewonnen_1(){
+	private boolean gewonnen_1(){
 		boolean noch_nicht_1=true;
 		for (int i = 0; i <3; i++) {
 			if((array_spielfeld[i][0].equals("X"))&&(array_spielfeld[i][1].equals("X"))&&(array_spielfeld[i][2].equals("X"))){
@@ -141,7 +141,7 @@ public class Logik {
 	}
 	
 	
-	public boolean gewonnen_2(){
+	private boolean gewonnen_2(){
 		boolean noch_nicht_2=true;
 		for (int i = 0; i <3; i++) {
 			if((array_spielfeld[i][0].equals("O"))&&(array_spielfeld[i][1].equals("O"))&&(array_spielfeld[i][2].equals("O"))){

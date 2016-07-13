@@ -12,6 +12,7 @@ public class test {
 	
 	public static void setzeichnen(int i  ,int b){
 		System.out.println("Zeile: "+i+" Spalte: "+b);
+		System.out.println(FromZeileSpalteIntoButton.umrechnen(i,b));
 	}
 
 }
