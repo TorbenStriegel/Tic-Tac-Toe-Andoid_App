@@ -61,7 +61,7 @@ public class Logik {
 
     private void zeichnen_Ki() {
 
-        test.setzeichnen(spieler_1.getZeile(),spieler_1.getSpalte());
+        //Main_Activity.setzeichnen(spieler_1.getZeile(),spieler_1.getSpalte());
     }
 
 
@@ -91,7 +91,7 @@ public class Logik {
 
     private void zeichnen_spieler(int zeile_zeichnen, int spalte_zeichnen){
 
-        test.setzeichnen(zeile_zeichnen, spalte_zeichnen);
+       //Main_Activity.setzeichnen(zeile_zeichnen, spalte_zeichnen);
     }
 
 

@@ -4,7 +4,7 @@ package de.torbennils.tictactoe;
  * Created by Torben on 13.07.2016.
  */
 
-public class Ki {
+public class Ki extends Spieler{
     private String name;
     private String [][] zeichnen = {{" "," "," "},{" "," "," "},{" "," "," "}};
     private boolean gezeichnet =false;
