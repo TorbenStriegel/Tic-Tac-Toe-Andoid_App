@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class Main_Activity extends AppCompatActivity {
-    Logik logik = new Logik(1);
+    static Logik logik = new Logik(2);
     TextView textViewSpiel = null;
     static Button buttonSpiel1 = null;
     static Button buttonSpiel2 = null;
@@ -121,40 +121,40 @@ public class Main_Activity extends AppCompatActivity {
         });
 
     }
-    public static void setZeichnen(int zeile, int spalte) {
-        if (zeile == 0){
-            if (spalte == 0){
-                buttonSpiel1.setText("X");
+    public static void setZeichnen(int zeile, int spalte,String name) {
+            if (zeile == 0) {
+                if (spalte == 0) {
+                    buttonSpiel1.setText(name);
+                }
+                if (spalte == 1) {
+                    buttonSpiel2.setText(name);
+                }
+                if (spalte == 2) {
+                    buttonSpiel3.setText(name);
+                }
             }
-            if (spalte == 1){
-                buttonSpiel2.setText("X");
+            if (zeile == 1) {
+                if (spalte == 0) {
+                    buttonSpiel4.setText(name);
+                }
+                if (spalte == 1) {
+                    buttonSpiel5.setText(name);
+                }
+                if (spalte == 2) {
+                    buttonSpiel6.setText(name);
+                }
             }
-            if (spalte == 2){
-                buttonSpiel3.setText("X");
+            if (zeile == 2) {
+                if (spalte == 0) {
+                    buttonSpiel7.setText(name);
+                }
+                if (spalte == 1) {
+                    buttonSpiel8.setText(name);
+                }
+                if (spalte == 2) {
+                    buttonSpiel9.setText(name);
+                }
             }
-        }
-        if (zeile == 1){
-            if (spalte == 0){
-                buttonSpiel4.setText("X");
-            }
-            if (spalte == 1){
-                buttonSpiel5.setText("X");
-            }
-            if (spalte == 2){
-                buttonSpiel6.setText("X");
-            }
-        }
-        if (zeile == 2){
-            if (spalte == 0){
-                buttonSpiel7.setText("X");
-            }
-            if (spalte == 1){
-                buttonSpiel8.setText("X");
-            }
-            if (spalte == 2){
-                buttonSpiel9.setText("X");
-            }
-        }
 
     }
    public void gewonnen(){

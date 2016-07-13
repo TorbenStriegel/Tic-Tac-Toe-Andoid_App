@@ -10,6 +10,7 @@ public class Logik {
     private Spieler spieler_2;
     private boolean gewonnen_boolean = false;
     private int zustand=0;
+    private int zustand_spieler=0;
 
     //**********************************************************************************************************
 
@@ -45,15 +46,23 @@ public class Logik {
             if(isTHEREaKI()){
                 zustand = 1;
                 setzen(zeile,spalte);
-                zeichnen_spieler(zeile,spalte);
+                zeichnen_spieler(zeile,spalte,spieler_2);
                 if(!gewonnen()){
                     setzen_Ki();
                     zeichnen_Ki();
                 }
 
             }else{
-                setzen(zeile,spalte);
-                zeichnen_spieler(zeile,spalte);
+                if (zustand_spieler==0){
+                    setzen(zeile,spalte);
+                    zeichnen_spieler(zeile,spalte,spieler_1);
+                    zustand_spieler ++;
+                }else{
+                    setzen(zeile,spalte);
+                    zeichnen_spieler(zeile,spalte,spieler_2);
+                    zustand_spieler --;
+                }
+
             }
         }
 
@@ -61,7 +70,7 @@ public class Logik {
 
     private void zeichnen_Ki() {
 
-        Main_Activity.setZeichnen(spieler_1.getZeile(),spieler_1.getSpalte());
+        Main_Activity.setZeichnen(spieler_1.getZeile(),spieler_1.getSpalte(),spieler_1.getName());
     }
 
 
@@ -89,9 +98,9 @@ public class Logik {
 
     }
 
-    private void zeichnen_spieler(int zeile_zeichnen, int spalte_zeichnen){
+    private void zeichnen_spieler(int zeile_zeichnen, int spalte_zeichnen,Spieler i){
 
-       Main_Activity.setZeichnen(zeile_zeichnen, spalte_zeichnen);
+       Main_Activity.setZeichnen(zeile_zeichnen, spalte_zeichnen,i.getName());
     }
 
 
@@ -114,7 +123,7 @@ public class Logik {
     }
 
     public boolean gewonnen(){
-        if(gewonnen_1()&&gewonnen_1()){
+        if(gewonnen_1()||gewonnen_2()){
             gewonnen_boolean=true;
         }
         return gewonnen_boolean;
