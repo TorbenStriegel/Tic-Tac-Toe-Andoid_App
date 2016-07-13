@@ -35,6 +35,7 @@ public class Ki extends Spieler{
         gezeichnet = false;
 
         for (int i = 0; i <3; i++) {
+        	 if(!gezeichnet){
             if(((zeichnen[i][2].equals(name_nicht))&&(zeichnen[i][1].equals(name_nicht)))||((zeichnen[i][0].equals(name_nicht))&&(zeichnen[i][1].equals(name_nicht)))||((zeichnen[i][2].equals(name_nicht))&&(zeichnen[i][0].equals(name_nicht)))){
                 if(zeichnen[i][0].equals(" ")){
                     zeichnen[i][0] = name;
@@ -53,7 +54,10 @@ public class Ki extends Spieler{
                     gezeichnet = true;
                 }
 
-            }else if(((zeichnen[2][i].equals(name_nicht))&&(zeichnen[1][i].equals(name_nicht)))||((zeichnen[0][i].equals(name_nicht))&&(zeichnen[1][i].equals(name_nicht)))||((zeichnen[2][i].equals(name_nicht))&&(zeichnen[0][i].equals(name_nicht)))){
+            }
+        	 }
+        	 if(!gezeichnet){
+        	 if(((zeichnen[2][i].equals(name_nicht))&&(zeichnen[1][i].equals(name_nicht)))||((zeichnen[0][i].equals(name_nicht))&&(zeichnen[1][i].equals(name_nicht)))||((zeichnen[2][i].equals(name_nicht))&&(zeichnen[0][i].equals(name_nicht)))){
                 if(zeichnen[0][i].equals(" ")){
                     zeichnen[0][i] = name;
                     zeile = 0;
@@ -71,7 +75,10 @@ public class Ki extends Spieler{
                     gezeichnet = true;
                 }
 
-            }else if(((zeichnen[0][0].equals(name_nicht))&&(zeichnen[1][1].equals(name_nicht)))||((zeichnen[0][0].equals(name_nicht))&&(zeichnen[2][2].equals(name_nicht)))||((zeichnen[2][2].equals(name_nicht))&&(zeichnen[1][1].equals(name_nicht)))){
+            }
+        	 }
+        	 if(!gezeichnet){
+        	 if(((zeichnen[0][0].equals(name_nicht))&&(zeichnen[1][1].equals(name_nicht)))||((zeichnen[0][0].equals(name_nicht))&&(zeichnen[2][2].equals(name_nicht)))||((zeichnen[2][2].equals(name_nicht))&&(zeichnen[1][1].equals(name_nicht)))){
                 if(zeichnen[0][0].equals(" ")){
                     zeichnen[0][0] = name;
                     zeile = 0;
@@ -89,7 +96,10 @@ public class Ki extends Spieler{
                     gezeichnet = true;
                 }
 
-            }else if(((zeichnen[0][2].equals(name_nicht))&&(zeichnen[1][1].equals(name_nicht)))||((zeichnen[0][2].equals(name_nicht))&&(zeichnen[2][0].equals(name_nicht)))||((zeichnen[0][2].equals(name_nicht))&&(zeichnen[1][1].equals(name_nicht)))){
+            }
+        	 }
+        	 if(!gezeichnet){
+        	 if(((zeichnen[0][2].equals(name_nicht))&&(zeichnen[1][1].equals(name_nicht)))||((zeichnen[0][2].equals(name_nicht))&&(zeichnen[2][0].equals(name_nicht)))||((zeichnen[0][2].equals(name_nicht))&&(zeichnen[1][1].equals(name_nicht)))){
                 if(zeichnen[0][2].equals(" ")){
                     zeichnen[0][2] = name;
                     zeile = 0;
@@ -108,6 +118,7 @@ public class Ki extends Spieler{
                 }
 
             }
+        }
         }
 
         if(!gezeichnet){

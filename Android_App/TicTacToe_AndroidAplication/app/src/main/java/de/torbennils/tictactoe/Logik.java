@@ -11,6 +11,7 @@ public class Logik {
     private boolean gewonnen_boolean = false;
     private int zustand=0;
     private int zustand_spieler=0;
+    private int zustand_gewonnen=0;
 
     //**********************************************************************************************************
 
@@ -69,8 +70,12 @@ public class Logik {
     }
 
     private void zeichnen_Ki() {
-
-        Main_Activity.setZeichnen(spieler_1.getZeile(),spieler_1.getSpalte(),spieler_1.getName());
+    	if(zustand_gewonnen==0){
+    		 Main_Activity.setZeichnen(spieler_1.getZeile(),spieler_1.getSpalte(),spieler_1.getName());
+    	}
+       if(gewonnen()){
+    	   zustand_gewonnen=1;
+       }
     }
 
 
@@ -99,8 +104,13 @@ public class Logik {
     }
 
     private void zeichnen_spieler(int zeile_zeichnen, int spalte_zeichnen,Spieler i){
-
-       Main_Activity.setZeichnen(zeile_zeichnen, spalte_zeichnen,i.getName());
+    	if(zustand_gewonnen==0){
+    		Main_Activity.setZeichnen(zeile_zeichnen, spalte_zeichnen,i.getName());
+   	}
+      if(gewonnen()){
+   	   zustand_gewonnen=1;
+      }
+       
     }
 
 
