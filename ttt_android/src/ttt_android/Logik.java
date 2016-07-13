@@ -56,7 +56,8 @@ public class Logik {
 	}
 	
 	private void zeichnen_Ki() {
-		//TorbensObjekt.setzeichnen(spieler_1.getZeile(),spieler_1.getSpalte());
+		
+		test.setzeichnen(spieler_1.getZeile(),spieler_1.getSpalte());
 	}
 
 
@@ -86,7 +87,7 @@ public class Logik {
 	
 	public void zeichnen_spieler(int zeile_zeichnen, int spalte_zeichnen){
 		
-		//TorbensObjekt.setzeichnen(zeile_zeichnen, spalte_zeichnen);
+		test.setzeichnen(zeile_zeichnen, spalte_zeichnen);
 	}
 	
 	
@@ -136,7 +137,7 @@ public class Logik {
 			noch_nicht_1=false;
 		}
 		
-		return noch_nicht_1;
+		return !noch_nicht_1;
 	}
 	
 	
@@ -161,7 +162,7 @@ public class Logik {
 			noch_nicht_2=false;
 		}
 		
-		return noch_nicht_2;
+		return !noch_nicht_2;
 	}
 	
 }
