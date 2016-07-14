@@ -12,10 +12,12 @@ public class Logik {
     private int zustand=0;
     private int zustand_spieler=0;
     private int zustand_gewonnen=0;
+    private Main_Activity main = null;
 
     //**********************************************************************************************************
 
-    public Logik(int anzahl){
+    public Logik(int anzahl, Main_Activity main){
+        this.main = main;
         if (anzahl==1){
             int i =(int)(Math.random()*10);
             if(i>5){
@@ -71,7 +73,7 @@ public class Logik {
 
     private void zeichnen_Ki() {
     	if(zustand_gewonnen==0){
-    		 Main_Activity.setZeichnen(spieler_1.getZeile(),spieler_1.getSpalte(),spieler_1.getName());
+    		 main.setZeichnen(spieler_1.getZeile(),spieler_1.getSpalte(),spieler_1.getName());
     	}
        if(gewonnen()){
     	   zustand_gewonnen=1;
@@ -105,7 +107,7 @@ public class Logik {
 
     private void zeichnen_spieler(int zeile_zeichnen, int spalte_zeichnen,Spieler i){
     	if(zustand_gewonnen==0){
-    		Main_Activity.setZeichnen(zeile_zeichnen, spalte_zeichnen,i.getName());
+    		main.setZeichnen(zeile_zeichnen, spalte_zeichnen,i.getName());
    	}
       if(gewonnen()){
    	   zustand_gewonnen=1;
@@ -187,12 +189,13 @@ public class Logik {
 
         return !noch_nicht_2;
     }
-}
 
-public getGewonnenName(){
+    public String getGewonnenName(){
 	if(gewonnen_1()){
 		return spieler_1.getName();
 	}else if(gewonnen_2()){
 		return spieler_2.getName();
 	}
+        return "null";
+    }
 }

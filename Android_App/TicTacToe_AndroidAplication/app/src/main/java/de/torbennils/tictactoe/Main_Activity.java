@@ -13,17 +13,17 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class Main_Activity extends AppCompatActivity {
-    static Logik logik = new Logik(2);
+    Logik logik = null;
     TextView textViewSpiel = null;
-    static Button buttonSpiel1 = null;
-    static Button buttonSpiel2 = null;
-    static Button buttonSpiel3 = null;
-    static Button buttonSpiel4 = null;
-    static Button buttonSpiel5 = null;
-    static Button buttonSpiel6 = null;
-    static Button buttonSpiel7 = null;
-    static Button buttonSpiel8 = null;
-    static Button buttonSpiel9 = null;
+    Button buttonSpiel1 = null;
+    Button buttonSpiel2 = null;
+    Button buttonSpiel3 = null;
+    Button buttonSpiel4 = null;
+    Button buttonSpiel5 = null;
+    Button buttonSpiel6 = null;
+    Button buttonSpiel7 = null;
+    Button buttonSpiel8 = null;
+    Button buttonSpiel9 = null;
 
     int runde = 0;
 
@@ -33,6 +33,7 @@ public class Main_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main_);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        logik = new Logik(2, this);
         textViewSpiel= (TextView) findViewById(R.id.textView_spiel);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -121,7 +122,7 @@ public class Main_Activity extends AppCompatActivity {
         });
 
     }
-    public static void setZeichnen(int zeile, int spalte,String name) {
+    public void setZeichnen(int zeile, int spalte,String name) {
             if (zeile == 0) {
                 if (spalte == 0) {
                     buttonSpiel1.setText(name);
@@ -160,7 +161,7 @@ public class Main_Activity extends AppCompatActivity {
    public void gewonnen(){
         runde++;
         if(logik.gewonnen()){
-            textViewSpiel.setText("Du hast gewonnen :D");
+            textViewSpiel.setText(logik.getGewonnenName()+" hast gewonnen :D");
         }else{
             if(runde%2 == 0){
                 textViewSpiel.setText("Runde: "+runde+" (Spieler 2)");
