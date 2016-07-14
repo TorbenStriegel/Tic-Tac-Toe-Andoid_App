@@ -40,7 +40,8 @@ public class Main_Activity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "© Nils und Torben", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                reset();
+                Snackbar.make(view, "Neue Runde neues Glück ;D", Snackbar.LENGTH_LONG).setAction("Action", null).show();
             }
         });
         buttonSpiel1 = (Button) findViewById(R.id.buttonSpiel_1);
@@ -159,18 +160,30 @@ public class Main_Activity extends AppCompatActivity {
 
     }
    public void gewonnen(){
-        runde++;
         if(logik.gewonnen()){
-            textViewSpiel.setText(logik.getGewonnenName()+" hast gewonnen :D");
+            textViewSpiel.setText(logik.getGewonnenName()+" hat gewonnen :D");
         }else{
+            runde++;
             if(runde%2 == 0){
-                textViewSpiel.setText("Runde: "+runde+" (Spieler 2)");
+                textViewSpiel.setText("Runde: "+runde);
             }else{
-                textViewSpiel.setText("Runde: "+runde+" (Spieler 1)");
+                textViewSpiel.setText("Runde: "+runde);
             }
-
         }
+    }
 
+    public void reset(){
+        logik = new Logik(2, this);
+        buttonSpiel1.setText("");
+        buttonSpiel2.setText("");
+        buttonSpiel3.setText("");
+        buttonSpiel4.setText("");
+        buttonSpiel5.setText("");
+        buttonSpiel6.setText("");
+        buttonSpiel7.setText("");
+        buttonSpiel8.setText("");
+        buttonSpiel9.setText("");
+        textViewSpiel.setText("Los geht´s :D");
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
