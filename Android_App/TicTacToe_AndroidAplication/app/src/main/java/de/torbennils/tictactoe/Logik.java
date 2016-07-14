@@ -191,19 +191,12 @@ public class Logik {
     }
 
     public String getGewonnenName(){
-<<<<<<< HEAD
-  if(gewonnen_1()){
-    return "X";
-  }else if(gewonnen_2()){
-    return "0";
-  }
-=======
-        if(gewonnen_1()){
-            return spieler_2.getName();
-        }else if(gewonnen_2()){
-            return spieler_1.getName();
-        }
->>>>>>> e4028ad1bb6b9ebb8b87d3911fefeecccfc367f7
+
+           if(gewonnen_1()){
+                return "X";
+           }else if(gewonnen_2()){
+                return "0";
+            }
         return "null";
     }
 }
