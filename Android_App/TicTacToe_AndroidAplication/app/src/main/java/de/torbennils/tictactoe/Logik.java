@@ -188,3 +188,11 @@ public class Logik {
         return !noch_nicht_2;
     }
 }
+
+public getGewonnenName(){
+	if(gewonnen_1()){
+		return spieler_1.getName();
+	}else if(gewonnen_2()){
+		return spieler_2.getName();
+	}
+}
