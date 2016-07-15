@@ -13,7 +13,7 @@ public class Buttons_Funktionen {
     private TextView_Funktionen textView_funktionen = null;
     FloatingActionButton buttonResset = null;
     private int anzahlButtons = 0;
-    private int anzahlRunden = 0;
+    private int anzahlRunden = 1;
 
     /*++++++++++++++++++++++++++++++++++++++++++++++++++++++Konstruktor++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
@@ -114,6 +114,7 @@ public class Buttons_Funktionen {
             buttons[i].setText("");
         }
         textView_funktionen.setText_textViewSpiel("Runde: "+anzahlRunden);
+        tictactoe_activity.setNewRefernzLogik();
     }
     /*public void gewonnen(){
         if(logik.gewonnen()){

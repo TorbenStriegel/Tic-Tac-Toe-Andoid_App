@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">TicTacToe</string>
     <string name="action_settings">Platzhalter</string>
-    <string name="title_activity_tic_tac_toe_">TicTacToe_Activity</string>
+    <string name="title_activity_tic_tac_toe_">TicTacToe</string>
 </resources>
