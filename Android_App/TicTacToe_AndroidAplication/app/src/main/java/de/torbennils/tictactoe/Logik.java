@@ -228,72 +228,72 @@ public class Logik {
     }
     
     public Button[] getButtons(){
-    	Button[] übergeben = new Button[3];
+    	Button[] ubergeben = new Button[3];
     	String name="X" ;
     	int x = 0;
     	
     	
             if((array_spielfeld[0][0].equals(name))&&(array_spielfeld[0][1].equals(name))&&(array_spielfeld[0][2].equals(name))){
-               übergeben[x]=buttonSpiel1;
+               ubergeben[x]=buttonSpiel1;
                x++;
-               übergeben[x]=buttonSpiel2;
+               ubergeben[x]=buttonSpiel2;
                x++;
-               übergeben[x]=buttonSpiel3;
+               ubergeben[x]=buttonSpiel3;
                x=0;
             }else if ((array_spielfeld[1][0].equals(name))&&(array_spielfeld[1][1].equals(name))&&(array_spielfeld[1][2].equals(name))){
-                übergeben[x]=buttonSpiel4;
+                ubergeben[x]=buttonSpiel4;
                 x++;
-                übergeben[x]=buttonSpiel5;
+                ubergeben[x]=buttonSpiel5;
                 x++;
-                übergeben[x]=buttonSpiel6;
+                ubergeben[x]=buttonSpiel6;
                 x=0;
              }else if ((array_spielfeld[2][0].equals(name))&&(array_spielfeld[2][1].equals(name))&&(array_spielfeld[2][2].equals(name))){
-                 übergeben[x]=buttonSpiel7;
+                 ubergeben[x]=buttonSpiel7;
                  x++;
-                 übergeben[x]=buttonSpiel8;
+                 ubergeben[x]=buttonSpiel8;
                  x++;
-                 übergeben[x]=buttonSpiel9;
+                 ubergeben[x]=buttonSpiel9;
                  x=0;
               }else if((array_spielfeld[0][0].equals(name))&&(array_spielfeld[1][0].equals(name))&&(array_spielfeld[2][0].equals(name))){
-                  übergeben[x]=buttonSpiel1;
+                  ubergeben[x]=buttonSpiel1;
                   x++;
-                  übergeben[x]=buttonSpiel4;
+                  ubergeben[x]=buttonSpiel4;
                   x++;
-                  übergeben[x]=buttonSpiel7;
+                  ubergeben[x]=buttonSpiel7;
                   x=0;
                }else if((array_spielfeld[0][1].equals(name))&&(array_spielfeld[1][1].equals(name))&&(array_spielfeld[2][1].equals(name))){
-                   übergeben[x]=buttonSpiel2;
+                   ubergeben[x]=buttonSpiel2;
                    x++;
-                   übergeben[x]=buttonSpiel5;
+                   ubergeben[x]=buttonSpiel5;
                    x++;
-                   übergeben[x]=buttonSpiel8;
+                   ubergeben[x]=buttonSpiel8;
                    x=0;
                 }else if((array_spielfeld[0][2].equals(name))&&(array_spielfeld[1][2].equals(name))&&(array_spielfeld[2][2].equals(name))){
-                    übergeben[x]=buttonSpiel3;
+                    ubergeben[x]=buttonSpiel3;
                     x++;
-                    übergeben[x]=buttonSpiel6;
+                    ubergeben[x]=buttonSpiel6;
                     x++;
-                    übergeben[x]=buttonSpiel9;
+                    ubergeben[x]=buttonSpiel9;
                     x=0;
                  }else if((array_spielfeld[0][0].equals(name))&&(array_spielfeld[1][1].equals(name))&&(array_spielfeld[2][2].equals(name))){
-                     übergeben[x]=buttonSpiel1;
+                     ubergeben[x]=buttonSpiel1;
                      x++;
-                     übergeben[x]=buttonSpiel5;
+                     ubergeben[x]=buttonSpiel5;
                      x++;
-                     übergeben[x]=buttonSpiel9;
+                     ubergeben[x]=buttonSpiel9;
                      x=0;
                   }else if((array_spielfeld[2][0].equals(name))&&(array_spielfeld[1][1].equals(name))&&(array_spielfeld[0][2].equals(name))){
-                      übergeben[x]=buttonSpiel7;
+                      ubergeben[x]=buttonSpiel7;
                       x++;
-                      übergeben[x]=buttonSpiel5;
+                      ubergeben[x]=buttonSpiel5;
                       x++;
-                      übergeben[x]=buttonSpiel3;
+                      ubergeben[x]=buttonSpiel3;
                       x=0;
                    }
   
     	
     	
-    	return übergeben;
+    	return ubergeben;
     }
     
 }
