@@ -162,6 +162,11 @@ public class Main_Activity extends AppCompatActivity {
    public void gewonnen(){
         if(logik.gewonnen()){
             textViewSpiel.setText(logik.getGewonnenName()+" hat gewonnen :D");
+            logik.setButtons(buttonSpiel1,buttonSpiel2,buttonSpiel3,buttonSpiel4,buttonSpiel5,buttonSpiel6,buttonSpiel7,buttonSpiel8,buttonSpiel9);
+            Button[] buttons_farbig = logik.getButtons();
+            buttons_farbig[0].setColor(Green);
+            buttons_farbig[1].setColor(Green);
+            buttons_farbig[2].setColor(Green);
         }else{
             runde++;
             if(runde%2 == 0){
@@ -174,6 +179,7 @@ public class Main_Activity extends AppCompatActivity {
 
     public void reset(){
         logik = new Logik(2, this);
+        runde =0;
         buttonSpiel1.setText("");
         buttonSpiel2.setText("");
         buttonSpiel3.setText("");
