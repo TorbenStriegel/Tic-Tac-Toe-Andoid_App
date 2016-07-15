@@ -14,6 +14,7 @@ public class Logik {
     private int zustand=0;
     private int zustand_spieler=0;
     private int zustand_gewonnen=0;
+    private int zustand_unentschieden=0;
     private Main_Activity main = null;
     private Button buttonSpiel1 = null;
     private Button buttonSpiel2 = null;
@@ -62,7 +63,7 @@ public class Logik {
                 zustand = 1;
                 setzen(zeile,spalte);
                 zeichnen_spieler(zeile,spalte,spieler_2);
-                if(!gewonnen()){
+                if(!gewonnen()||zustand_unentschieden==8){
                     setzen_Ki();
                     zeichnen_Ki();
                 }
@@ -86,6 +87,7 @@ public class Logik {
     private void zeichnen_Ki() {
         if(zustand_gewonnen==0){
             main.setZeichnen(spieler_1.getZeile(),spieler_1.getSpalte(),spieler_1.getName());
+            zustand_unentschieden++;
         }
         if(gewonnen()){
             zustand_gewonnen=1;
@@ -120,6 +122,7 @@ public class Logik {
     private void zeichnen_spieler(int zeile_zeichnen, int spalte_zeichnen,Spieler i){
         if(zustand_gewonnen==0){
             main.setZeichnen(zeile_zeichnen, spalte_zeichnen,i.getName());
+            zustand_unentschieden++;
         }
         if(gewonnen()){
             zustand_gewonnen=1;
@@ -207,7 +210,7 @@ public class Logik {
            if(gewonnen_1()){
                 return "X";
            }else if(gewonnen_2()){
-                return "0";
+                return "O";
             }else{
             	return "Unentschieden";
             }
@@ -229,8 +232,15 @@ public class Logik {
     
     public Button[] getButtons(){
     	Button[] ubergeben = new Button[3];
+        int x = 0;
+        ubergeben[x]=buttonSpiel1;
+        x++;
+        ubergeben[x]=buttonSpiel2;
+        x++;
+        ubergeben[x]=buttonSpiel3;
+        x=0;
     	String name="X" ;
-    	int x = 0;
+
     	
     	
             if((array_spielfeld[0][0].equals(name))&&(array_spielfeld[0][1].equals(name))&&(array_spielfeld[0][2].equals(name))){
@@ -289,7 +299,67 @@ public class Logik {
                       x++;
                       ubergeben[x]=buttonSpiel3;
                       x=0;
+
                    }
+        name="O";
+        if((array_spielfeld[0][0].equals(name))&&(array_spielfeld[0][1].equals(name))&&(array_spielfeld[0][2].equals(name))){
+                ubergeben[x]=buttonSpiel1;
+                x++;
+                ubergeben[x]=buttonSpiel2;
+                x++;
+                ubergeben[x]=buttonSpiel3;
+                x=0;
+            }else if ((array_spielfeld[1][0].equals(name))&&(array_spielfeld[1][1].equals(name))&&(array_spielfeld[1][2].equals(name))){
+                ubergeben[x]=buttonSpiel4;
+                x++;
+                ubergeben[x]=buttonSpiel5;
+                x++;
+                ubergeben[x]=buttonSpiel6;
+                x=0;
+            }else if ((array_spielfeld[2][0].equals(name))&&(array_spielfeld[2][1].equals(name))&&(array_spielfeld[2][2].equals(name))){
+                ubergeben[x]=buttonSpiel7;
+                x++;
+                ubergeben[x]=buttonSpiel8;
+                x++;
+                ubergeben[x]=buttonSpiel9;
+                x=0;
+            }else if((array_spielfeld[0][0].equals(name))&&(array_spielfeld[1][0].equals(name))&&(array_spielfeld[2][0].equals(name))){
+                ubergeben[x]=buttonSpiel1;
+                x++;
+                ubergeben[x]=buttonSpiel4;
+                x++;
+                ubergeben[x]=buttonSpiel7;
+                x=0;
+            }else if((array_spielfeld[0][1].equals(name))&&(array_spielfeld[1][1].equals(name))&&(array_spielfeld[2][1].equals(name))){
+                ubergeben[x]=buttonSpiel2;
+                x++;
+                ubergeben[x]=buttonSpiel5;
+                x++;
+                ubergeben[x]=buttonSpiel8;
+                x=0;
+            }else if((array_spielfeld[0][2].equals(name))&&(array_spielfeld[1][2].equals(name))&&(array_spielfeld[2][2].equals(name))){
+                ubergeben[x]=buttonSpiel3;
+                x++;
+                ubergeben[x]=buttonSpiel6;
+                x++;
+                ubergeben[x]=buttonSpiel9;
+                x=0;
+            }else if((array_spielfeld[0][0].equals(name))&&(array_spielfeld[1][1].equals(name))&&(array_spielfeld[2][2].equals(name))){
+                ubergeben[x]=buttonSpiel1;
+                x++;
+                ubergeben[x]=buttonSpiel5;
+                x++;
+                ubergeben[x]=buttonSpiel9;
+                x=0;
+            }else if((array_spielfeld[2][0].equals(name))&&(array_spielfeld[1][1].equals(name))&&(array_spielfeld[0][2].equals(name))){
+                ubergeben[x]=buttonSpiel7;
+                x++;
+                ubergeben[x]=buttonSpiel5;
+                x++;
+                ubergeben[x]=buttonSpiel3;
+                x=0;
+
+            }
   
     	
     	

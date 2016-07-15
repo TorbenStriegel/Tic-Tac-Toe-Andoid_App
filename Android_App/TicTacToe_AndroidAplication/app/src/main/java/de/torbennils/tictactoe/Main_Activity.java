@@ -1,6 +1,7 @@
 package de.torbennils.tictactoe;
 
-import android.content.Intent;
+
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -24,6 +25,7 @@ public class Main_Activity extends AppCompatActivity {
     Button buttonSpiel7 = null;
     Button buttonSpiel8 = null;
     Button buttonSpiel9 = null;
+    Button[] buttons_farbig;
 
     int runde = 0;
 
@@ -33,7 +35,7 @@ public class Main_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main_);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        logik = new Logik(2, this);
+        logik = new Logik(1, this);
         textViewSpiel= (TextView) findViewById(R.id.textView_spiel);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -163,10 +165,10 @@ public class Main_Activity extends AppCompatActivity {
         if(logik.gewonnen()){
             textViewSpiel.setText(logik.getGewonnenName()+" hat gewonnen :D");
             logik.setButtons(buttonSpiel1,buttonSpiel2,buttonSpiel3,buttonSpiel4,buttonSpiel5,buttonSpiel6,buttonSpiel7,buttonSpiel8,buttonSpiel9);
-            Button[] buttons_farbig = logik.getButtons();
-            buttons_farbig[0].setColor(Green);
-            buttons_farbig[1].setColor(Green);
-            buttons_farbig[2].setColor(Green);
+            buttons_farbig = logik.getButtons();
+            buttons_farbig[0].setBackgroundColor(Color.GREEN);
+            buttons_farbig[1].setBackgroundColor(Color.GREEN);
+            buttons_farbig[2].setBackgroundColor(Color.GREEN);
         }else{
             runde++;
             if(runde%2 == 0){
@@ -178,7 +180,7 @@ public class Main_Activity extends AppCompatActivity {
     }
 
     public void reset(){
-        logik = new Logik(2, this);
+        logik = new Logik(1, this);
         runde =0;
         buttonSpiel1.setText("");
         buttonSpiel2.setText("");
@@ -189,6 +191,11 @@ public class Main_Activity extends AppCompatActivity {
         buttonSpiel7.setText("");
         buttonSpiel8.setText("");
         buttonSpiel9.setText("");
+        logik.setButtons(buttonSpiel1,buttonSpiel2,buttonSpiel3,buttonSpiel4,buttonSpiel5,buttonSpiel6,buttonSpiel7,buttonSpiel8,buttonSpiel9);
+        buttons_farbig = logik.getButtons();
+        buttons_farbig[0].setBackgroundColor(Color.LTGRAY);
+        buttons_farbig[1].setBackgroundColor(Color.GREEN);
+        buttons_farbig[2].setBackgroundColor(Color.GREEN);
         textViewSpiel.setText("Los geht´s :D");
     }
     @Override
