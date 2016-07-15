@@ -63,7 +63,7 @@ public class Logik {
                 zustand = 1;
                 setzen(zeile,spalte);
                 zeichnen_spieler(zeile,spalte,spieler_2);
-                if(!gewonnen()||zustand_unentschieden==8){
+                if(!gewonnen()&&!(zustand_unentschieden>8)){
                     setzen_Ki();
                     zeichnen_Ki();
                 }
