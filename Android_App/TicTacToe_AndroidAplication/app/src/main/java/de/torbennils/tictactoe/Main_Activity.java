@@ -26,6 +26,7 @@ public class Main_Activity extends AppCompatActivity {
     Button buttonSpiel8 = null;
     Button buttonSpiel9 = null;
     Button[] buttons_farbig;
+    Buttons_Funktionen buttons_funktionen = null;
 
     int runde = 0;
 
@@ -35,7 +36,6 @@ public class Main_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main_);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        logik = new Logik(1, this);
         textViewSpiel= (TextView) findViewById(R.id.textView_spiel);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -123,7 +123,8 @@ public class Main_Activity extends AppCompatActivity {
                 gewonnen();
             }
         });
-
+        buttons_funktionen = new Buttons_Funktionen();
+        logik = new Logik(1, this, buttons_funktionen); //Anzahl Spieler, Refernz auf diese Klasse, Refernz auf buttons_funktionen
     }
     public void setZeichnen(int zeile, int spalte,String name) {
             if (zeile == 0) {
@@ -180,7 +181,7 @@ public class Main_Activity extends AppCompatActivity {
     }
 
     public void reset(){
-        logik = new Logik(1, this);
+        logik = new Logik(1, this, buttons_funktionen);
         runde =0;
         buttonSpiel1.setText("");
         buttonSpiel2.setText("");

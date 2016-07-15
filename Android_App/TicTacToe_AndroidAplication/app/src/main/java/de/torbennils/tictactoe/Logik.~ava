@@ -64,7 +64,7 @@ public class Logik {
                 zustand = 1;
                 setzen(zeile,spalte);
                 zeichnen_spieler(zeile,spalte,spieler_2);
-                if(!gewonnen()&&!(zustand_unentschieden>8)){
+                if(!gewonnen()||zustand_unentschieden==8){
                     setzen_Ki();
                     zeichnen_Ki();
                 }
@@ -213,7 +213,7 @@ public class Logik {
            }else if(gewonnen_2()){
                 return "O";
             }else{
-              return "Unentschieden";
+            	return "Unentschieden";
             }
         
     }
@@ -232,7 +232,7 @@ public class Logik {
     }
     
     public Button[] getButtons(){
-      Button[] ubergeben = new Button[3];
+    	Button[] ubergeben = new Button[3];
         int x = 0;
         ubergeben[x]=buttonSpiel1;
         x++;
@@ -240,10 +240,10 @@ public class Logik {
         x++;
         ubergeben[x]=buttonSpiel3;
         x=0;
-      String name="X" ;
+    	String name="X" ;
 
-      
-      
+    	
+    	
             if((array_spielfeld[0][0].equals(name))&&(array_spielfeld[0][1].equals(name))&&(array_spielfeld[0][2].equals(name))){
                ubergeben[x]=buttonSpiel1;
                x++;
@@ -362,9 +362,9 @@ public class Logik {
 
             }
   
-      
-      
-      return ubergeben;
+    	
+    	
+    	return ubergeben;
     }
     
 }
