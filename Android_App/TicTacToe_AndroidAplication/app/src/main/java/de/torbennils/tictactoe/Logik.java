@@ -1,5 +1,7 @@
 package de.torbennils.tictactoe;
 
+import android.widget.Button;
+
 /**
  * Created by Torben on 13.07.2016.
  */
@@ -212,16 +214,16 @@ public class Logik {
         
     }
     
-    public void setButtons(Button 1,Button 2,Button 3,Button 4,Button 5,Button 6,Button 7,Button 8,Button 9){
-       buttonSpiel1 = 1;
-       buttonSpiel2 = 2;
-       buttonSpiel3 = 3;
-       buttonSpiel4 = 4;
-       buttonSpiel5 = 5;
-       buttonSpiel6 = 6;
-       buttonSpiel7 = 7;
-       buttonSpiel8 = 8;
-       buttonSpiel9 = 9;
+    public void setButtons(Button buttonSpiel1,Button buttonSpiel2,Button buttonSpiel3,Button buttonSpiel4,Button buttonSpiel5,Button buttonSpiel6,Button buttonSpiel7,Button buttonSpiel8,Button buttonSpiel9){
+       this.buttonSpiel1 = buttonSpiel1;
+       this.buttonSpiel2 = buttonSpiel2;
+       this.buttonSpiel3 = buttonSpiel3;
+       this.buttonSpiel4 = buttonSpiel4;
+       this.buttonSpiel5 = buttonSpiel5;
+       this.buttonSpiel6 = buttonSpiel6;
+       this.buttonSpiel7 = buttonSpiel7;
+       this.buttonSpiel8 = buttonSpiel8;
+       this.buttonSpiel9 = buttonSpiel9;
 
     }
     
