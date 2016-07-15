@@ -88,7 +88,7 @@ public class Logik {
 
     private void zeichnen_Ki() {
         if(zustand_gewonnen==0){
-            main.setZeichnen(spieler_1.getZeile(),spieler_1.getSpalte(),spieler_1.getName());
+            //main.setZeichnen(spieler_1.getZeile(),spieler_1.getSpalte(),spieler_1.getName());
             zustand_unentschieden++;
         }
         if(gewonnen()){
@@ -123,7 +123,7 @@ public class Logik {
 
     private void zeichnen_spieler(int zeile_zeichnen, int spalte_zeichnen,Spieler i){
         if(zustand_gewonnen==0){
-            main.setZeichnen(zeile_zeichnen, spalte_zeichnen,i.getName());
+            //main.setZeichnen(zeile_zeichnen, spalte_zeichnen,i.getName());
             zustand_unentschieden++;
         }
         if(gewonnen()){
@@ -368,7 +368,7 @@ public class Logik {
   
       
       
-            funktionen_buttons.setFarbe(ubergeben,i);
+            funktionen_buttons.setFarbeArray(ubergeben,i);
     }
     
 }
