@@ -1,5 +1,6 @@
 package de.torbennils.tictactoe;
 
+import android.graphics.Color;
 import android.widget.Button;
 
 /**
@@ -153,6 +154,7 @@ public class Logik {
     public boolean gewonnen(){
         if(gewonnen_1()||gewonnen_2()){
             gewonnen_boolean=true;
+            setButtonsfarbe();
         }
         return gewonnen_boolean;
     }
@@ -230,9 +232,10 @@ public class Logik {
        this.buttonSpiel9 = buttonSpiel9;
 
     }
-    
-    public Button[] getButtons(){
+
+    public void setButtonsfarbe(){
       Button[] ubergeben = new Button[3];
+        int i = Color.GREEN;
         int x = 0;
         ubergeben[x]=buttonSpiel1;
         x++;
@@ -303,6 +306,7 @@ public class Logik {
 
                    }
         name="O";
+        i = Color.RED;
         if((array_spielfeld[0][0].equals(name))&&(array_spielfeld[0][1].equals(name))&&(array_spielfeld[0][2].equals(name))){
                 ubergeben[x]=buttonSpiel1;
                 x++;
@@ -364,7 +368,7 @@ public class Logik {
   
       
       
-      return ubergeben;
+            funktionen_buttons.setFarbe(ubergeben,i);
     }
     
 }
