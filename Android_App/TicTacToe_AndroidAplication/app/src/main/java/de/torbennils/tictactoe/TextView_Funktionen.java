@@ -7,14 +7,14 @@ import android.widget.TextView;
  */
 
 public class TextView_Funktionen {
-    private Main_Activity main_activity = null;
+    private TicTacToe_Activity tictactoe_activity = null;
     private TextView textViewSpiel = null;
 
      /*++++++++++++++++++++++++++++++++++++++++++++++++++++++Konstruktor++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
-    TextView_Funktionen(Main_Activity main_activity){
-        this.main_activity = main_activity;
-        textViewSpiel = (TextView) main_activity.findViewById(R.id.textView_spiel);
+    TextView_Funktionen(TicTacToe_Activity tictactoe_activity){
+        this.tictactoe_activity = tictactoe_activity;
+        textViewSpiel = (TextView) tictactoe_activity.findViewById(R.id.textView_spiel);
     }
     /*++++++++++++++++++++++++++++++++++++++++++++++++++++++Methoden++++++++++++++++++++++++++++++++++++++++++++++++++++*/
     /*++++++++++++++++++++++++++++++++++++++++++++++++++++++Setter+++++++++++++++++++++++++++++++++++++++++++++++++++++*/

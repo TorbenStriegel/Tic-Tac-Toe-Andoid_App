@@ -9,7 +9,7 @@ import android.widget.Button;
 public class Buttons_Funktionen {
 
     private Button[] buttons;
-    private Main_Activity main_activity = null;
+    private TicTacToe_Activity tictactoe_activity = null;
     private TextView_Funktionen textView_funktionen = null;
     FloatingActionButton buttonResset = null;
     private int anzahlButtons = 0;
@@ -17,74 +17,74 @@ public class Buttons_Funktionen {
 
     /*++++++++++++++++++++++++++++++++++++++++++++++++++++++Konstruktor++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
-    public Buttons_Funktionen(final Main_Activity main_activity, int anzahlButtons, TextView_Funktionen textView_funktionen){
-        this.main_activity = main_activity;
+    public Buttons_Funktionen(final TicTacToe_Activity tictactoe_activity, int anzahlButtons, TextView_Funktionen textView_funktionen){
+        this.tictactoe_activity = tictactoe_activity;
         this.textView_funktionen = textView_funktionen;
         buttons = new Button[anzahlButtons];
-        buttons[0] = (Button) main_activity.findViewById(R.id.buttonSpiel_0);
+        buttons[0] = (Button) tictactoe_activity.findViewById(R.id.buttonSpiel_0);
         buttons[0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                main_activity.getReferenzLogik().setPosition(0,0);
+                tictactoe_activity.getReferenzLogik().setPosition(0,0);
             }
         });
-        buttons[1] = (Button) main_activity.findViewById(R.id.buttonSpiel_1);
+        buttons[1] = (Button) tictactoe_activity.findViewById(R.id.buttonSpiel_1);
         buttons[1].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                main_activity.getReferenzLogik().setPosition(0,1);
+                tictactoe_activity.getReferenzLogik().setPosition(0,1);
             }
         });
-        buttons[2] = (Button) main_activity.findViewById(R.id.buttonSpiel_2);
+        buttons[2] = (Button) tictactoe_activity.findViewById(R.id.buttonSpiel_2);
         buttons[2].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                main_activity.getReferenzLogik().setPosition(0,2);
+                tictactoe_activity.getReferenzLogik().setPosition(0,2);
             }
         });
-        buttons[3] = (Button) main_activity.findViewById(R.id.buttonSpiel_3);
+        buttons[3] = (Button) tictactoe_activity.findViewById(R.id.buttonSpiel_3);
         buttons[3].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                main_activity.getReferenzLogik().setPosition(1,0);
+                tictactoe_activity.getReferenzLogik().setPosition(1,0);
             }
         });
-        buttons[4] = (Button) main_activity.findViewById(R.id.buttonSpiel_4);
+        buttons[4] = (Button) tictactoe_activity.findViewById(R.id.buttonSpiel_4);
         buttons[4].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                main_activity.getReferenzLogik().setPosition(1,1);
+                tictactoe_activity.getReferenzLogik().setPosition(1,1);
             }
         });
-        buttons[5] = (Button) main_activity.findViewById(R.id.buttonSpiel_5);
+        buttons[5] = (Button) tictactoe_activity.findViewById(R.id.buttonSpiel_5);
         buttons[5].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                main_activity.getReferenzLogik().setPosition(1,2);
+                tictactoe_activity.getReferenzLogik().setPosition(1,2);
             }
         });
-        buttons[6] = (Button) main_activity.findViewById(R.id.buttonSpiel_6);
+        buttons[6] = (Button) tictactoe_activity.findViewById(R.id.buttonSpiel_6);
         buttons[6].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                main_activity.getReferenzLogik().setPosition(2,0);
+                tictactoe_activity.getReferenzLogik().setPosition(2,0);
             }
         });
-        buttons[7] = (Button) main_activity.findViewById(R.id.buttonSpiel_7);
+        buttons[7] = (Button) tictactoe_activity.findViewById(R.id.buttonSpiel_7);
         buttons[7].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                main_activity.getReferenzLogik().setPosition(2,1);
+                tictactoe_activity.getReferenzLogik().setPosition(2,1);
             }
         });
-        buttons[8] = (Button) main_activity.findViewById(R.id.buttonSpiel_8);
+        buttons[8] = (Button) tictactoe_activity.findViewById(R.id.buttonSpiel_8);
         buttons[8].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                main_activity.getReferenzLogik().setPosition(2,2);
+                tictactoe_activity.getReferenzLogik().setPosition(2,2);
             }
         });
-        buttonResset = (FloatingActionButton) main_activity.findViewById(R.id.fab);
+        buttonResset = (FloatingActionButton) tictactoe_activity.findViewById(R.id.fab);
         buttonResset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

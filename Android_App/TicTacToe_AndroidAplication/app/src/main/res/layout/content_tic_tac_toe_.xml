@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_tic_tac_toe_"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="de.torbennils.tictactoe.TicTacToe_Activity"
+    tools:showIn="@layout/activity_tic_tac_toe_">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="59dp" />
+
+        <TextView
+            android:text="Herzlich Wilkommen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView_spiel"
+            android:textSize="24sp"
+            android:textAlignment="center"
+            android:textStyle="normal|bold" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            app:srcCompat="@mipmap/ic_launcher"
+            android:id="@+id/imageView" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/buttonTicTacToe_horizontal_high">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/buttonTicTacToe_horizontal_high"
+                android:id="@+id/buttonSpiel_0"
+                android:layout_weight="1"
+                android:textSize="36sp"
+                android:textStyle="normal|bold" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/buttonTicTacToe_horizontal_high"
+                android:id="@+id/buttonSpiel_1"
+                android:layout_weight="1"
+                android:textSize="36sp"
+                android:textStyle="normal|bold" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/buttonTicTacToe_horizontal_high"
+                android:id="@+id/buttonSpiel_2"
+                android:layout_weight="1"
+                android:textSize="36sp"
+                android:textStyle="normal|bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/buttonTicTacToe_horizontal_high">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/buttonTicTacToe_horizontal_high"
+                android:id="@+id/buttonSpiel_3"
+                android:layout_weight="1"
+                android:textSize="36sp"
+                android:textStyle="normal|bold" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/buttonTicTacToe_horizontal_high"
+                android:id="@+id/buttonSpiel_4"
+                android:layout_weight="1"
+                android:textSize="36sp"
+                android:textStyle="normal|bold" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/buttonTicTacToe_horizontal_high"
+                android:id="@+id/buttonSpiel_5"
+                android:layout_weight="1"
+                android:textSize="36sp"
+                android:textStyle="normal|bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/buttonTicTacToe_horizontal_high">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/buttonTicTacToe_horizontal_high"
+                android:id="@+id/buttonSpiel_6"
+                android:layout_weight="1"
+                android:textSize="36sp"
+                android:textStyle="normal|bold" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/buttonTicTacToe_horizontal_high"
+                android:id="@+id/buttonSpiel_7"
+                android:layout_weight="1"
+                android:textSize="36sp"
+                android:textStyle="normal|bold" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/buttonTicTacToe_horizontal_high"
+                android:id="@+id/buttonSpiel_8"
+                android:layout_weight="1"
+                android:textSize="36sp"
+                android:textStyle="normal|bold" />
+
+        </LinearLayout>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

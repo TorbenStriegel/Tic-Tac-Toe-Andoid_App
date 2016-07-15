@@ -16,7 +16,7 @@ public class Logik {
     private int zustand_spieler=0;
     private int zustand_gewonnen=0;
     private int zustand_unentschieden=0;
-    private Main_Activity main = null;
+    private TicTacToe_Activity main = null;
     private Button buttonSpiel1 = null;
     private Button buttonSpiel2 = null;
     private Button buttonSpiel3 = null;
@@ -30,7 +30,7 @@ public class Logik {
 
     //**********************************************************************************************************
 
-    public Logik(int anzahl, Main_Activity main,Buttons_Funktionen funktionen_buttons ){
+    public Logik(int anzahl, TicTacToe_Activity main, Buttons_Funktionen funktionen_buttons ){
         this.main = main;
         this.funktionen_buttons = funktionen_buttons;
         if (anzahl==1){
