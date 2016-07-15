@@ -16,6 +16,7 @@ import android.widget.TextView;
 public class Main_Activity extends AppCompatActivity {
     Logik logik = null;
     TextView textViewSpiel = null;
+    Button[] button;
     Button buttonSpiel1 = null;
     Button buttonSpiel2 = null;
     Button buttonSpiel3 = null;
@@ -25,7 +26,6 @@ public class Main_Activity extends AppCompatActivity {
     Button buttonSpiel7 = null;
     Button buttonSpiel8 = null;
     Button buttonSpiel9 = null;
-    Button[] buttons_farbig;
     Buttons_Funktionen buttons_funktionen = null;
 
     int runde = 0;
@@ -46,24 +46,24 @@ public class Main_Activity extends AppCompatActivity {
                 Snackbar.make(view, "Neue Runde neues Glück ;D", Snackbar.LENGTH_LONG).setAction("Action", null).show();
             }
         });
-        buttonSpiel1 = (Button) findViewById(R.id.buttonSpiel_1);
-        buttonSpiel1.setOnClickListener(new View.OnClickListener() {
+        button[0] = (Button) findViewById(R.id.buttonSpiel_1);
+        button[0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 logik.setPosition(0,0);
                 gewonnen();
             }
         });
-        buttonSpiel2 = (Button) findViewById(R.id.buttonSpiel_2);
-        buttonSpiel2.setOnClickListener(new View.OnClickListener() {
+        button[0] = (Button) findViewById(R.id.buttonSpiel_2);
+        button[0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 logik.setPosition(0,1);
                 gewonnen();
             }
         });
-        buttonSpiel3 = (Button) findViewById(R.id.buttonSpiel_3);
-        buttonSpiel3.setOnClickListener(new View.OnClickListener() {
+        button[0] = (Button) findViewById(R.id.buttonSpiel_3);
+        button[0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 logik.setPosition(0,2);
@@ -123,7 +123,7 @@ public class Main_Activity extends AppCompatActivity {
                 gewonnen();
             }
         });
-        buttons_funktionen = new Buttons_Funktionen();
+        buttons_funktionen = new Buttons_Funktionen(this);
         logik = new Logik(1, this, buttons_funktionen); //Anzahl Spieler, Refernz auf diese Klasse, Refernz auf buttons_funktionen
     }
     public void setZeichnen(int zeile, int spalte,String name) {
@@ -166,10 +166,6 @@ public class Main_Activity extends AppCompatActivity {
         if(logik.gewonnen()){
             textViewSpiel.setText(logik.getGewonnenName()+" hat gewonnen :D");
             logik.setButtons(buttonSpiel1,buttonSpiel2,buttonSpiel3,buttonSpiel4,buttonSpiel5,buttonSpiel6,buttonSpiel7,buttonSpiel8,buttonSpiel9);
-            buttons_farbig = logik.getButtons();
-            buttons_farbig[0].setBackgroundColor(Color.GREEN);
-            buttons_farbig[1].setBackgroundColor(Color.GREEN);
-            buttons_farbig[2].setBackgroundColor(Color.GREEN);
         }else{
             runde++;
             if(runde%2 == 0){
@@ -193,10 +189,6 @@ public class Main_Activity extends AppCompatActivity {
         buttonSpiel8.setText("");
         buttonSpiel9.setText("");
         logik.setButtons(buttonSpiel1,buttonSpiel2,buttonSpiel3,buttonSpiel4,buttonSpiel5,buttonSpiel6,buttonSpiel7,buttonSpiel8,buttonSpiel9);
-        buttons_farbig = logik.getButtons();
-        buttons_farbig[0].setBackgroundColor(Color.LTGRAY);
-        buttons_farbig[1].setBackgroundColor(Color.GREEN);
-        buttons_farbig[2].setBackgroundColor(Color.GREEN);
         textViewSpiel.setText("Los geht´s :D");
     }
     @Override
