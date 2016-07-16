@@ -85,7 +85,6 @@ public class Logik {
 
     private void zeichnen_Ki() {
         if(zustand_gewonnen==0){
-            //main.setZeichnen(spieler_1.getZeile(),spieler_1.getSpalte(),spieler_1.getName());
             if (spieler_1.getZeile() ==0&&spieler_1.getSpalte()==0){
                 funktionen_buttons.setText(buttons[0],spieler_1.getName());
             }

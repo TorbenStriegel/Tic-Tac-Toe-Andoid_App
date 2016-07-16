@@ -20,7 +20,6 @@ public class Ki extends Spieler{
         }
 
         name = x_o;
-        // TODO Auto-generated constructor stub
     }
 
     public void setString(String[][] i){

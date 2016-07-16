@@ -9,4 +9,37 @@
     tools:showIn="@layout/activity_main_">
 
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="59dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="Spieler 1"
+            android:ems="10"
+            android:id="@+id/editText" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="Spieler 2"
+            android:ems="10"
+            android:id="@+id/editText2" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@mipmap/ic_launcher"
+            android:id="@+id/imageView2"
+            android:layout_weight="0.78" />
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
