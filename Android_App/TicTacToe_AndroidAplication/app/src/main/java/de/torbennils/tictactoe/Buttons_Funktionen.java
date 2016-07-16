@@ -91,11 +91,15 @@ public class Buttons_Funktionen {
         buttonResset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                resetButtons();
                 anzahlRunden++;
+                resetButtons();
                 Snackbar.make(view, "Neue Runde neues Glück ;D", Snackbar.LENGTH_LONG).setAction("Action", null).show();
             }
         });
+        for (int i =0;i < anzahlButtons;i++) {
+            buttons[i].setBackgroundColor(Color.LTGRAY);
+            buttons[i].setTextColor(Color.BLACK);
+        }
     }
 
     /*++++++++++++++++++++++++++++++++++++++++++++++++++++++Methoden++++++++++++++++++++++++++++++++++++++++++++++++++++*/
@@ -120,7 +124,7 @@ public class Buttons_Funktionen {
 
 
         for (int i =0;i < anzahlButtons;i++){
-            buttons[i].setBackgroundColor(Color.DKGRAY);
+            buttons[i].setBackgroundColor(Color.LTGRAY);
             buttons[i].setText("");
 
         }

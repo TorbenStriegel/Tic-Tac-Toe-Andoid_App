@@ -72,7 +72,8 @@
                 android:id="@+id/buttonSpiel_0"
                 android:layout_weight="1"
                 android:textSize="36sp"
-                android:textStyle="normal|bold" />
+                android:textStyle="normal|bold"
+                android:textColor="@android:color/darker_gray" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -80,7 +81,8 @@
                 android:id="@+id/buttonSpiel_1"
                 android:layout_weight="1"
                 android:textSize="36sp"
-                android:textStyle="normal|bold" />
+                android:textStyle="normal|bold"
+                android:textColor="@android:color/darker_gray" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -88,7 +90,8 @@
                 android:id="@+id/buttonSpiel_2"
                 android:layout_weight="1"
                 android:textSize="36sp"
-                android:textStyle="normal|bold" />
+                android:textStyle="normal|bold"
+                android:textColor="@android:color/darker_gray" />
         </LinearLayout>
 
         <LinearLayout
@@ -101,7 +104,8 @@
                 android:id="@+id/buttonSpiel_3"
                 android:layout_weight="1"
                 android:textSize="36sp"
-                android:textStyle="normal|bold" />
+                android:textStyle="normal|bold"
+                android:textColor="@android:color/darker_gray" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -109,7 +113,8 @@
                 android:id="@+id/buttonSpiel_4"
                 android:layout_weight="1"
                 android:textSize="36sp"
-                android:textStyle="normal|bold" />
+                android:textStyle="normal|bold"
+                android:textColor="@android:color/darker_gray" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -117,7 +122,8 @@
                 android:id="@+id/buttonSpiel_5"
                 android:layout_weight="1"
                 android:textSize="36sp"
-                android:textStyle="normal|bold" />
+                android:textStyle="normal|bold"
+                android:textColor="@android:color/darker_gray" />
         </LinearLayout>
 
         <LinearLayout
@@ -130,7 +136,8 @@
                 android:id="@+id/buttonSpiel_6"
                 android:layout_weight="1"
                 android:textSize="36sp"
-                android:textStyle="normal|bold" />
+                android:textStyle="normal|bold"
+                android:textColor="@android:color/darker_gray" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -138,7 +145,8 @@
                 android:id="@+id/buttonSpiel_7"
                 android:layout_weight="1"
                 android:textSize="36sp"
-                android:textStyle="normal|bold" />
+                android:textStyle="normal|bold"
+                android:textColor="@android:color/darker_gray" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -146,7 +154,8 @@
                 android:id="@+id/buttonSpiel_8"
                 android:layout_weight="1"
                 android:textSize="36sp"
-                android:textStyle="normal|bold" />
+                android:textStyle="normal|bold"
+                android:textColor="@android:color/darker_gray" />
 
         </LinearLayout>
     </LinearLayout>
