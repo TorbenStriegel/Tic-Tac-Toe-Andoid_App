@@ -6,14 +6,21 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
+import static de.torbennils.tictactoe.Main_Activity.getKiAuswahl;
 
 public class TicTacToe_Activity extends AppCompatActivity {
     private Logik logik = null;
     private Buttons_Funktionen buttons_funktionen = null;
     private TextView_Funktionen textView_funktionen = null;
+    private String spieler1 = null;
+    private String spieler2 = null;
     private int anzahlButtons = 9;
+    //private boolean auswahlKi = true;
     private int anzahlSpieler = 1;
 
     @Override
@@ -22,7 +29,16 @@ public class TicTacToe_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_tic_tac_toe_);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+    /*+++++++++++++++++++++++++++++++++++++++++++++Abfragen von Daten aus Main_Activity++++++++++++++++++++++++++++++++++++++++++*/
+        Intent i = getIntent();
+        spieler1 = i.getStringExtra("Spieler1");
+        spieler2 = i.getStringExtra("Spieler2");
+        //auswahlKi = main_Activty.getBooleanExtra("auswahllKi", true);
+        if (getKiAuswahl()){
+            anzahlSpieler = 1;
+        }else{
+            anzahlSpieler = 2;
+        }
         FloatingActionButton fab_back = (FloatingActionButton) findViewById(R.id.fab_back);
         fab_back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,7 +47,7 @@ public class TicTacToe_Activity extends AppCompatActivity {
                 finish();
             }
         });
-        /*++++++++++++++++++++++++++++++++++++++++++++++++++++++Erzeugen von Opjekten++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    /*++++++++++++++++++++++++++++++++++++++++++++++++++++++Erzeugen von Opjekten++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
         textView_funktionen = new TextView_Funktionen(this);
         buttons_funktionen = new Buttons_Funktionen(this,anzahlButtons,textView_funktionen); //Refernz this, Anzahl der Buttons, Refernz auf TextView_Funktionen

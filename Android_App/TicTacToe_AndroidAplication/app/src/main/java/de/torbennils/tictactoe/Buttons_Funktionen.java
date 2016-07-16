@@ -14,7 +14,7 @@ public class Buttons_Funktionen {
     FloatingActionButton buttonResset = null;
     private int anzahlButtons = 0;
     private int anzahlRunden = 1;
-    private Logik logic =null;
+    private Logik logik =null;
 
     /*++++++++++++++++++++++++++++++++++++++++++++++++++++++Konstruktor++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
@@ -22,7 +22,7 @@ public class Buttons_Funktionen {
         this.tictactoe_activity = tictactoe_activity;
         this.textView_funktionen = textView_funktionen;
         this.anzahlButtons = anzahlButtons;
-        logic=tictactoe_activity.getReferenzLogik();
+        logik=tictactoe_activity.getReferenzLogik();
         buttons = new Button[anzahlButtons];
         buttons[0] = (Button) tictactoe_activity.findViewById(R.id.buttonSpiel_0);
         buttons[0].setOnClickListener(new View.OnClickListener() {
@@ -99,6 +99,7 @@ public class Buttons_Funktionen {
         for (int i =0;i < anzahlButtons;i++) {
             buttons[i].setBackgroundColor(Color.LTGRAY);
             buttons[i].setTextColor(Color.BLACK);
+            buttons[i].setRotation(20);
         }
     }
 
@@ -121,12 +122,9 @@ public class Buttons_Funktionen {
     }
 
     public void resetButtons() {
-
-
         for (int i =0;i < anzahlButtons;i++){
             buttons[i].setBackgroundColor(Color.LTGRAY);
             buttons[i].setText("");
-
         }
 
         textView_funktionen.setText_textViewSpiel("Runde: " + anzahlRunden);
@@ -135,9 +133,9 @@ public class Buttons_Funktionen {
     }
 
     public void gewonnen(){
-        logic=tictactoe_activity.getReferenzLogik();
-        if(logic.gewonnen()){
-            textView_funktionen.setText_textViewSpiel(logic.getGewonnenName()+" hat gewonnen :D");
+        logik=tictactoe_activity.getReferenzLogik();
+        if(logik.gewonnen()){
+            textView_funktionen.setText_textViewSpiel(logik.getGewonnenName()+" hat gewonnen :D");
         }else{
             anzahlRunden++;
             if(anzahlRunden%2 == 0){
