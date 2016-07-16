@@ -14,7 +14,7 @@ public class TicTacToe_Activity extends AppCompatActivity {
     private Buttons_Funktionen buttons_funktionen = null;
     private TextView_Funktionen textView_funktionen = null;
     private int anzahlButtons = 9;
-    private int anzahlSpieler = 2;
+    private int anzahlSpieler = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
