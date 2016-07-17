@@ -1,7 +1,10 @@
 package de.torbennils.tictactoe;
 
 import android.graphics.Color;
+import android.os.Handler;
 import android.widget.Button;
+
+import static android.R.attr.delay;
 
 /**
  * Created by Torben on 13.07.2016.
@@ -19,6 +22,7 @@ public class Logik {
     private TicTacToe_Activity main = null;
     private Button[] buttons = null;
     private Buttons_Funktionen funktionen_buttons ;
+    private Handler myHandler;
 
     //**********************************************************************************************************
 
@@ -26,6 +30,7 @@ public class Logik {
         this.main = main;
         this.funktionen_buttons = funktionen_buttons;
         setButtons();
+        myHandler=new Handler();
         if (anzahl==1){
             int i =(int)(Math.random()*10);
             if(i>5){
@@ -60,12 +65,19 @@ public class Logik {
 
                 zeichnen_spieler(zeile,spalte,spieler_2);
 
-                if(!gewonnen()&&!(zustand_unentschieden>8)){
+                if(!gewonnen()&&!(zustand_unentschieden>8)) {
 
                     setzen_Ki();
-                    zeichnen_Ki();
-                    
+                    myHandler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            zeichnen_Ki();
+                        }
+
+                    }, 500);
+
                 }
+
 
             }else{
                 if (zustand_spieler==0){
@@ -86,6 +98,7 @@ public class Logik {
     }
 
     private void zeichnen_Ki() {
+
         if(zustand_gewonnen==0){
 
             if (spieler_1.getZeile() ==0&&spieler_1.getSpalte()==0){
@@ -203,7 +216,7 @@ public class Logik {
     }
 
     public boolean gewonnen(){
-        if(gewonnen_1()||gewonnen_2()){
+        if((gewonnen_1()||gewonnen_2())&&!gewonnen_boolean){
             gewonnen_boolean=true;
             this.setButtonsfarbe();
         }
@@ -422,9 +435,12 @@ public class Logik {
             }
   
       
-      
-            funktionen_buttons.setTextFarbeArray(ubergeben,i);
-    }
+
+
+                funktionen_buttons.setTextFarbeArray(ubergeben, i);
+
+        }
+
 
     public String getSpieler1name(){
         return spieler_1.getName();
