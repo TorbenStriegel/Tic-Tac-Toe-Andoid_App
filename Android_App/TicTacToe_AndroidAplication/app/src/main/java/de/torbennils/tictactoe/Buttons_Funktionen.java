@@ -97,9 +97,7 @@ public class Buttons_Funktionen {
             }
         });
         for (int i =0;i < anzahlButtons;i++) {
-            buttons[i].setBackgroundColor(Color.LTGRAY);
             buttons[i].setTextColor(Color.BLACK);
-            buttons[i].setRotation(20);
         }
     }
 
@@ -113,19 +111,27 @@ public class Buttons_Funktionen {
 
     public void setFarbe(Button buttonReferenz, int buttonFarbe) {
         buttonReferenz.setBackgroundColor(buttonFarbe);
-        //gewonnen();
     }
 
     public void setText(Button buttonReferenz, String buttonText) {
-        //gewonnen();
         buttonReferenz.setText(buttonText);
 
 
     }
 
+    public void setTextFarbe(Button buttonReferenz, int buttonFarbe) {
+        buttonReferenz.setTextColor(buttonFarbe);
+    }
+
+    public void setTextFarbeArray(Button[] buttonReferenz, int textFarbe) {
+        for (int i = 0; i < buttonReferenz.length; i++) {
+            buttonReferenz[i].setTextColor(textFarbe);
+        }
+    }
+
     public void resetButtons() {
         for (int i =0;i < anzahlButtons;i++){
-            buttons[i].setBackgroundColor(Color.LTGRAY);
+            buttons[i].setTextColor(Color.BLACK);
             buttons[i].setText("");
         }
 
