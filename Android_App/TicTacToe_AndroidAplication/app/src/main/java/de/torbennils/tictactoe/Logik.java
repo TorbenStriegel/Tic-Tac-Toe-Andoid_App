@@ -415,7 +415,7 @@ public class Logik {
   
       
       
-            funktionen_buttons.setFarbeArray(ubergeben,i);
+            funktionen_buttons.setTextFarbeArray(ubergeben,i);
     }
     
 }
