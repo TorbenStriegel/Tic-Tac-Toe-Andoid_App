@@ -22,7 +22,9 @@
     </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/content_tic_tac_toe_"
-        android:id="@+id/include" />
+        android:id="@+id/include"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

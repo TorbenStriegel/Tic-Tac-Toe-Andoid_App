@@ -6,6 +6,9 @@ import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.widget.Button;
 
+import static de.torbennils.tictactoe.Main_Activity.getSpieler1;
+import static de.torbennils.tictactoe.Main_Activity.getSpieler2;
+
 public class Buttons_Funktionen {
 
     private Button[] buttons;
@@ -15,6 +18,8 @@ public class Buttons_Funktionen {
     private int anzahlButtons = 0;
     private int anzahlRunden = 1;
     private Logik logik =null;
+    private int spieler1 = 0;
+    private int spieler2 = 0;
 
     /*++++++++++++++++++++++++++++++++++++++++++++++++++++++Konstruktor++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
@@ -115,8 +120,6 @@ public class Buttons_Funktionen {
 
     public void setText(Button buttonReferenz, String buttonText) {
         buttonReferenz.setText(buttonText);
-
-
     }
 
     public void setTextFarbe(Button buttonReferenz, int buttonFarbe) {
@@ -142,21 +145,17 @@ public class Buttons_Funktionen {
 
     public void gewonnen(){
         logik=tictactoe_activity.getReferenzLogik();
-        if(logik.gewonnen()){
-            textView_funktionen.setText_textViewSpiel(logik.getGewonnenName()+" hat gewonnen :D");
-        }else{
-            anzahlRunden++;
-            if(anzahlRunden%2 == 0){
-                textView_funktionen.setText_textViewSpiel("Runde: "+anzahlRunden);
-            }else{
-                textView_funktionen.setText_textViewSpiel("Runde: "+anzahlRunden);
-            }
+        if(logik.hatspieler1gewonnen()){
+            spieler1++;
+            textView_funktionen.setText_textViewSpieler1(getSpieler1()+":\n"+spieler1);
+        }else if(logik.hatspieler2gewonnen()){
+            spieler2++;
+            textView_funktionen.setText_textViewSpieler2(getSpieler2()+":\n"+spieler2);
         }
     }
     /*++++++++++++++++++++++++++++++++++++++++++++++++++++++Getter+++++++++++++++++++++++++++++++++++++++++++++++++++++*/
     public Button[] getButtonArray() {
         return buttons;
     }
-
 
 }
