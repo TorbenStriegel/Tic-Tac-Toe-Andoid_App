@@ -425,5 +425,53 @@ public class Logik {
       
             funktionen_buttons.setTextFarbeArray(ubergeben,i);
     }
-    
+
+    public String getSpieler1name(){
+        return spieler_1.getName();
+
+    }
+
+    public String getSpieler2name(){
+        return spieler_2.getName();
+
+    }
+
+    public Boolean hatspieler1gewonnen(){
+        if (spieler_1.getName().equals("X")){
+            if (gewonnen_1()){
+                return true;
+            }else{
+                return false;
+            }
+        }else if(spieler_1.getName().equals("O")){
+            if (gewonnen_2()){
+                return true;
+            }else{
+                return false;
+            }
+
+        }else{
+            return null;
+        }
+    }
+    public Boolean hatspieler2gewonnen(){
+        if (spieler_2.getName().equals("X")){
+            if (gewonnen_1()){
+                return true;
+            }else{
+                return false;
+            }
+        }else if(spieler_2.getName().equals("O")){
+            if (gewonnen_2()){
+                return true;
+            }else{
+                return false;
+            }
+
+        }else{
+            return null;
+        }
+    }
+
 }
+
