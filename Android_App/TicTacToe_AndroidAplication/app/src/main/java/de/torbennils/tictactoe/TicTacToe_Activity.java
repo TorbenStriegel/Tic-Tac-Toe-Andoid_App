@@ -30,10 +30,7 @@ public class TicTacToe_Activity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
     /*+++++++++++++++++++++++++++++++++++++++++++++Abfragen von Daten aus Main_Activity++++++++++++++++++++++++++++++++++++++++++*/
-        Intent i = getIntent();
-        spieler1 = i.getStringExtra("Spieler1");
-        spieler2 = i.getStringExtra("Spieler2");
-        //auswahlKi = main_Activty.getBooleanExtra("auswahllKi", true);
+
         if (getKiAuswahl()){
             anzahlSpieler = 1;
         }else{

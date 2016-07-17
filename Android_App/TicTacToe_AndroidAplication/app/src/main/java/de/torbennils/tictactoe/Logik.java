@@ -117,6 +117,7 @@ public class Logik {
             zustand_unentschieden++;
         }
         if(gewonnen()){
+            funktionen_buttons.gewonnen();
             zustand_gewonnen=1;
         }
     }
@@ -178,6 +179,7 @@ public class Logik {
             zustand_unentschieden++;
         }
         if(gewonnen()){
+            funktionen_buttons.gewonnen();
             zustand_gewonnen=1;
         }
 
@@ -420,9 +422,6 @@ public class Logik {
                 x=0;
 
             }
-  
-      
-      
             funktionen_buttons.setTextFarbeArray(ubergeben,i);
     }
 
@@ -436,7 +435,7 @@ public class Logik {
 
     }
 
-    public Boolean hatspieler1gewonnen(){
+    public boolean hatspieler1gewonnen(){
         if (spieler_1.getName().equals("X")){
             if (gewonnen_1()){
                 return true;
@@ -451,10 +450,10 @@ public class Logik {
             }
 
         }else{
-            return null;
+            return false;
         }
     }
-    public Boolean hatspieler2gewonnen(){
+    public boolean hatspieler2gewonnen(){
         if (spieler_2.getName().equals("X")){
             if (gewonnen_1()){
                 return true;
@@ -469,7 +468,7 @@ public class Logik {
             }
 
         }else{
-            return null;
+            return false;
         }
     }
 

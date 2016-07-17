@@ -26,11 +26,8 @@
             android:text="Spieler 1"
             android:ems="10"
             android:id="@+id/editText_Spieler1"
-            android:contextClickable="false"
-            android:editable="false"
-            android:freezesText="false"
-            android:focusable="false"
-            android:focusableInTouchMode="false" />
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
 
         <EditText
             android:layout_width="match_parent"
@@ -39,11 +36,8 @@
             android:text="Spieler 2"
             android:ems="10"
             android:id="@+id/editText_Spieler2"
-            android:contextClickable="false"
-            android:editable="false"
-            android:freezesText="false"
-            android:focusable="false"
-            android:focusableInTouchMode="false" />
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
 
         <CheckBox
             android:text="gegen dein Handy :D"
