@@ -57,9 +57,11 @@ public class Logik {
             if(isTHEREaKI()){
                 zustand = 1;
                 setzen(zeile,spalte);
+
                 zeichnen_spieler(zeile,spalte,spieler_2);
-                
+
                 if(!gewonnen()&&!(zustand_unentschieden>8)){
+
                     setzen_Ki();
                     zeichnen_Ki();
                     
@@ -85,6 +87,7 @@ public class Logik {
 
     private void zeichnen_Ki() {
         if(zustand_gewonnen==0){
+
             if (spieler_1.getZeile() ==0&&spieler_1.getSpalte()==0){
                 funktionen_buttons.setText(buttons[0],spieler_1.getName());
             }
@@ -171,6 +174,7 @@ public class Logik {
             if (zeile_zeichnen ==2&&spalte_zeichnen==2){
                 funktionen_buttons.setText(buttons[8],i.getName());
             }
+
             zustand_unentschieden++;
         }
         if(gewonnen()){
@@ -273,8 +277,12 @@ public class Logik {
 
     public void setButtonsfarbe(){
         setButtons();
+        String name="X" ;
       Button[] ubergeben = new Button[3];
         int i = Color.GREEN;
+        name=spieler_1.getName();
+
+
         int x = 0;
         ubergeben[x]=buttons[0];
         x++;
@@ -282,7 +290,7 @@ public class Logik {
         x++;
         ubergeben[x]=buttons[0];
         x=0;
-      String name="X" ;
+
 
       
       
@@ -352,7 +360,7 @@ public class Logik {
                 i = Color.RED;
 
                    }
-        name="O";
+        name=spieler_2.getName();
 
         if((array_spielfeld[0][0].equals(name))&&(array_spielfeld[0][1].equals(name))&&(array_spielfeld[0][2].equals(name))){
                 ubergeben[x]=buttons[0];

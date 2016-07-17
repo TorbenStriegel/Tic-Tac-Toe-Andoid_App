@@ -119,6 +119,8 @@ public class Buttons_Funktionen {
     public void setText(Button buttonReferenz, String buttonText) {
         //gewonnen();
         buttonReferenz.setText(buttonText);
+
+
     }
 
     public void resetButtons() {

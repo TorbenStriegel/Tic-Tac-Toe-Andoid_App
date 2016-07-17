@@ -33,6 +33,8 @@ public class Ki extends Spieler{
         int zusammen  = zeile_1 +spalte_1;
         gezeichnet = false;
 
+
+
         for (int i = 0; i <3; i++) {
         	 if(!gezeichnet){
             if(((zeichnen[i][2].equals(name_nicht))&&(zeichnen[i][1].equals(name_nicht)))||((zeichnen[i][0].equals(name_nicht))&&(zeichnen[i][1].equals(name_nicht)))||((zeichnen[i][2].equals(name_nicht))&&(zeichnen[i][0].equals(name_nicht)))){
