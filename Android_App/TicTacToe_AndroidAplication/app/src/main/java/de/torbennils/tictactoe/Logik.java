@@ -435,7 +435,6 @@ public class Logik {
                 x=0;
 
             }
-<<<<<<< HEAD
   
       
 
@@ -443,11 +442,7 @@ public class Logik {
                 funktionen_buttons.setTextFarbeArray(ubergeben, i);
 
         }
-
-=======
-            funktionen_buttons.setTextFarbeArray(ubergeben,i);
-    }
->>>>>>> f1725c69ebd27a7f08ea86f10f9586ed384429b5
+            
 
     public String getSpieler1name(){
         return spieler_1.getName();
