@@ -6,6 +6,7 @@ import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.widget.Button;
 
+import static de.torbennils.tictactoe.Main_Activity.getKiAuswahl;
 import static de.torbennils.tictactoe.Main_Activity.getSpieler1;
 import static de.torbennils.tictactoe.Main_Activity.getSpieler2;
 
@@ -145,12 +146,22 @@ public class Buttons_Funktionen {
 
     public void gewonnen(){
         logik=tictactoe_activity.getReferenzLogik();
-        if(logik.hatspieler1gewonnen()){
-            spieler1++;
-            textView_funktionen.setText_textViewSpieler1(getSpieler1()+":\n"+spieler1);
-        }else if(logik.hatspieler2gewonnen()){
-            spieler2++;
-            textView_funktionen.setText_textViewSpieler2(getSpieler2()+":\n"+spieler2);
+        if (getKiAuswahl()){
+            if(logik.hatspieler2gewonnen()){
+                spieler1++;
+                textView_funktionen.setText_textViewSpieler1(getSpieler1()+":\n"+spieler1);
+            }else if(logik.hatspieler1gewonnen()){
+                spieler2++;
+                textView_funktionen.setText_textViewSpieler2(getSpieler2()+":\n"+spieler2);
+            }
+        }else{
+            if(logik.hatspieler1gewonnen()){
+                spieler1++;
+                textView_funktionen.setText_textViewSpieler1(getSpieler1()+":\n"+spieler1);
+            }else if(logik.hatspieler2gewonnen()){
+                spieler2++;
+                textView_funktionen.setText_textViewSpieler2(getSpieler2()+":\n"+spieler2);
+            }
         }
     }
     /*++++++++++++++++++++++++++++++++++++++++++++++++++++++Getter+++++++++++++++++++++++++++++++++++++++++++++++++++++*/

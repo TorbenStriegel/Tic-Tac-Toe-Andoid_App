@@ -53,7 +53,11 @@ public class Main_Activity extends AppCompatActivity {
 
     public static String getSpieler1(){ return spieler1.getText().toString(); }
     public static String getSpieler2(){
-        return spieler2.getText().toString();
+        if (auswahlKi){
+            return"Dein Handy";
+        }else{
+            return spieler2.getText().toString();
+        }
     }
     public static boolean getKiAuswahl(){
         return auswahlKi;
