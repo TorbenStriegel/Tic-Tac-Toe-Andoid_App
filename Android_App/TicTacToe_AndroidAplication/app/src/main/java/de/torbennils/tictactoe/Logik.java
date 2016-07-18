@@ -355,7 +355,7 @@ public class Logik {
                x++;
                ubergeben[x]=buttons[2];
                x=0;
-                if (){
+                i=Color.RED;
             }else if ((array_spielfeld[1][0].equals(name))&&(array_spielfeld[1][1].equals(name))&&(array_spielfeld[1][2].equals(name))){
                 ubergeben[x]=buttons[3];
                 x++;
