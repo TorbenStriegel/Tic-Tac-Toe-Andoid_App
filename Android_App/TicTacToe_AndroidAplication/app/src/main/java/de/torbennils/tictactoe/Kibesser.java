@@ -80,7 +80,7 @@ public class Kibesser extends Ki {
                 }
             }
             if(!gezeichnet){
-                if(((zeichnen[0][2].equals(name))&&(zeichnen[1][1].equals(name)))||((zeichnen[0][2].equals(name))&&(zeichnen[2][0].equals(name)))||((zeichnen[0][2].equals(name))&&(zeichnen[1][1].equals(name)))){
+                if(((zeichnen[0][2].equals(name))&&(zeichnen[1][1].equals(name)))||((zeichnen[0][2].equals(name))&&(zeichnen[2][0].equals(name)))||((zeichnen[2][0].equals(name))&&(zeichnen[1][1].equals(name)))){
                     if(zeichnen[0][2].equals(" ")){
                         zeichnen[0][2] = name;
                         zeile = 0;
@@ -171,7 +171,7 @@ public class Kibesser extends Ki {
                 }
             }
             if(!gezeichnet){
-                if(((zeichnen[0][2].equals(name_nicht))&&(zeichnen[1][1].equals(name_nicht)))||((zeichnen[0][2].equals(name_nicht))&&(zeichnen[2][0].equals(name_nicht)))||((zeichnen[0][2].equals(name_nicht))&&(zeichnen[1][1].equals(name_nicht)))){
+                if(((zeichnen[0][2].equals(name_nicht))&&(zeichnen[1][1].equals(name_nicht)))||((zeichnen[0][2].equals(name_nicht))&&(zeichnen[2][0].equals(name_nicht)))||((zeichnen[2][0].equals(name_nicht))&&(zeichnen[1][1].equals(name_nicht)))){
                     if(zeichnen[0][2].equals(" ")){
                         zeichnen[0][2] = name;
                         zeile = 0;
