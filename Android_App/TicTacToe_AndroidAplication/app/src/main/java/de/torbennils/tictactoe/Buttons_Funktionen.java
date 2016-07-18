@@ -6,6 +6,8 @@ import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.Random;
+
 import static de.torbennils.tictactoe.Main_Activity.getKi1Auswahl;
 import static de.torbennils.tictactoe.Main_Activity.getKiAuswahl;
 import static de.torbennils.tictactoe.Main_Activity.getSpieler1;
@@ -16,12 +18,14 @@ public class Buttons_Funktionen {
     private Button[] buttons;
     private TicTacToe_Activity tictactoe_activity = null;
     private TextView_Funktionen textView_funktionen = null;
-    FloatingActionButton buttonResset = null;
+    private Random random = new Random();
+    private FloatingActionButton buttonResset = null;
     private int anzahlButtons = 0;
     private int anzahlRunden = 1;
     private Logik logik =null;
     private int spieler1 = 0;
     private int spieler2 = 0;
+    private String textAusgabe = "";
 
     /*++++++++++++++++++++++++++++++++++++++++++++++++++++++Konstruktor++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
@@ -100,7 +104,20 @@ public class Buttons_Funktionen {
             public void onClick(View view) {
                 anzahlRunden++;
                 resetButtons();
-                Snackbar.make(view, "Neue Runde neues Glück ;D", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                int zufallsZahl = random.nextInt(3);
+                if (zufallsZahl == 0){
+                    textAusgabe = "Neue Runde neues Glück ;D";
+                }
+                if (zufallsZahl == 1){
+                    textAusgabe = "Kopf nicht hängen lassen :)";
+                }
+                if (zufallsZahl == 2){
+                    textAusgabe = "Weiter So!!!";
+                }
+                if (zufallsZahl == 3){
+                    textAusgabe = getSpieler1()+" vor, noch ein Tor!";
+                }
+                Snackbar.make(view, textAusgabe, Snackbar.LENGTH_LONG).setAction("Action", null).show();
             }
         });
         for (int i =0;i < anzahlButtons;i++) {
