@@ -71,18 +71,21 @@ public class Logik {
             }
         }
             weristdran=1;
-        if (werstartet>=5){
-            weristdran =2;
-            zustand=1;
-            kisturn=true;
-            setzen_Ki();
-            myHandler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    zeichnen_Ki();
-                }
+        if (werstartet>=5) {
+            weristdran = 2;
+            zustand = 0;
 
-            }, 250);
+            if (spieler_1 instanceof Ki||spieler_1 instanceof Kibesser|| spieler_1 instanceof KiCracy ) {
+                kisturn = true;
+                setzen_Ki();
+                myHandler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        zeichnen_Ki();
+                    }
+
+                }, 500);
+            }
         }
         textView_funktionen.setWerIstDran(weristdran);
     }
@@ -93,7 +96,7 @@ public class Logik {
     public void setPosition(int zeile ,int spalte){
         if(isValid(zeile,spalte)){
             if(isTHEREaKI()){
-                zustand = 1;
+                zustand = 0;
 
                     if (!kisturn) {
                         kisturn = true;
@@ -240,7 +243,7 @@ public class Logik {
 
 
     private boolean isTHEREaKI(){
-        if(spieler_1 instanceof Ki){
+        if(spieler_1 instanceof Ki||spieler_1 instanceof Kibesser|| spieler_1 instanceof KiCracy ){
             return true;
         }else{
             return false;
