@@ -449,12 +449,12 @@ public class Logik {
             
 
     public String getSpieler1name(){
-        return spieler_1.getName();
+        return spieler_2.getName();
 
     }
 
     public String getSpieler2name(){
-        return spieler_2.getName();
+        return spieler_1.getName();
 
     }
 
