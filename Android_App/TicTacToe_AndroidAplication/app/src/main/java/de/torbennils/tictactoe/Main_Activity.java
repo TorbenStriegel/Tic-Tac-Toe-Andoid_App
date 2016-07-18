@@ -44,6 +44,11 @@ public class Main_Activity extends AppCompatActivity {
         checkBox1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 auswahlKi1 = ((CheckBox) view).isChecked();
+                if (auswahlKi1){
+                    spieler2.setVisibility(View.INVISIBLE);
+                }else{
+                    spieler2.setVisibility(View.VISIBLE);
+                }
             }
         });
         final CheckBox checkBox2 = (CheckBox) findViewById(R.id.checkBox_KiAuswahl2);
@@ -51,6 +56,11 @@ public class Main_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 auswahlKi2 = ((CheckBox) view).isChecked();
+                if (auswahlKi2){
+                    spieler2.setVisibility(View.INVISIBLE);
+                }else{
+                    spieler2.setVisibility(View.VISIBLE);
+                }
             }
         });
         final CheckBox checkBox3 = (CheckBox) findViewById(R.id.checkBox_KiAuswahl3);
@@ -58,6 +68,11 @@ public class Main_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 auswahlKi3 = ((CheckBox) view).isChecked();
+                if (auswahlKi3){
+                    spieler2.setVisibility(View.INVISIBLE);
+                }else{
+                    spieler2.setVisibility(View.VISIBLE);
+                }
             }
         });
 
@@ -69,7 +84,7 @@ public class Main_Activity extends AppCompatActivity {
                 startActivity(ticTacToe_Activity);
             }
         });
-        spieler2.visibil
+        //spieler2.setVisibility(View.INVISIBLE);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

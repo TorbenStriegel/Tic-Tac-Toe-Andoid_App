@@ -20,11 +20,13 @@
             android:layout_height="58dp" />
 
         <TextView
-            android:text="TextView"
+            android:text="@string/Spieler_Auswahl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textView2"
-            tools:text="@string/Spieler_Auswahl" />
+            android:textStyle="normal|bold|italic"
+            android:layout_marginLeft="5dp"
+            android:textAlignment="center" />
 
         <EditText
             android:layout_width="match_parent"
@@ -50,24 +52,27 @@
             android:text="@string/KI_Auswahl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView" />
+            android:id="@+id/textView"
+            android:textStyle="normal|bold|italic"
+            android:layout_marginLeft="5dp"
+            android:textAlignment="center" />
 
         <CheckBox
-            android:text="ff"
+            android:text="Crazy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/checkBox_KiAuswahl1"
             android:duplicateParentState="true"
-            android:checked="true" />
+            android:checked="false" />
 
         <CheckBox
-            android:text="CheckBox"
+            android:text="Normal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/checkBox_KiAuswahl2" />
 
         <CheckBox
-            android:text="CheckBox"
+            android:text="Schwer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/checkBox_KiAuswahl3" />
@@ -77,6 +82,6 @@
             android:layout_height="wrap_content"
             app:srcCompat="@mipmap/ic_launcher"
             android:id="@+id/imageView2"
-            android:layout_weight="0.50" />
+            android:layout_weight="0.82" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
