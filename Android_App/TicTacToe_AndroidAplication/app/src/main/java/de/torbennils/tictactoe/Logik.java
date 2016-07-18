@@ -24,7 +24,7 @@ public class Logik {
     private Buttons_Funktionen funktionen_buttons ;
     private Handler myHandler;
     private boolean kisturn = false;
-    private boolean schongewonnenundübergeben = false;
+    private boolean schongewonnenundubergeben = false;
 
     //**********************************************************************************************************
 
@@ -36,10 +36,10 @@ public class Logik {
         if (anzahl==1){
             int i =(int)(Math.random()*10);
             if(i>5){
-                spieler_1 = new KiCracy("X");
+                spieler_1 = new Kibesser("X");
                 spieler_2 = new Spieler("O");
             }else{
-                spieler_1 = new KiCracy("O");
+                spieler_1 = new Kibesser("O");
                 spieler_2 = new Spieler("X");
             }
         }else if (anzahl==2){
@@ -459,10 +459,10 @@ public class Logik {
     }
 
     public boolean hatspieler1gewonnen(){
-        if (!schongewonnenundübergeben) {
+        if (!schongewonnenundubergeben) {
             if (spieler_1.getName().equals("X")) {
                 if (gewonnen_1()) {
-                    schongewonnenundübergeben=true;
+                    schongewonnenundubergeben=true;
                     return true;
 
                 } else {
@@ -470,7 +470,7 @@ public class Logik {
                 }
             } else if (spieler_1.getName().equals("O")) {
                 if (gewonnen_2()) {
-                    schongewonnenundübergeben=true;
+                    schongewonnenundubergeben=true;
                     return true;
 
                 } else {
@@ -486,10 +486,10 @@ public class Logik {
         }
     }
     public boolean hatspieler2gewonnen() {
-        if (!schongewonnenundübergeben) {
+        if (!schongewonnenundubergeben) {
             if (spieler_2.getName().equals("X")) {
                 if (gewonnen_1()) {
-                    schongewonnenundübergeben = true;
+                    schongewonnenundubergeben = true;
                     return true;
 
                 } else {
@@ -497,7 +497,7 @@ public class Logik {
                 }
             } else if (spieler_2.getName().equals("O")) {
                 if (gewonnen_2()) {
-                    schongewonnenundübergeben = true;
+                    schongewonnenundubergeben = true;
                     return true;
 
                 } else {

@@ -7,10 +7,10 @@ package de.torbennils.tictactoe;
 public class Ki extends Spieler{
     protected String name;
     protected String [][] zeichnen = {{" "," "," "},{" "," "," "},{" "," "," "}};
-    private boolean gezeichnet =false;
-    int zeile = 10;
+    protected boolean gezeichnet =false;
+    protected int zeile = 10;
     protected int spalte = 10;
-    private String name_nicht ;
+    protected String name_nicht ;
     public Ki(String x_o) {
         super(x_o);
         if(x_o.equals("O")){
