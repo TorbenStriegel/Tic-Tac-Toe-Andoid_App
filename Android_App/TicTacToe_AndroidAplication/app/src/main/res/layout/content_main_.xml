@@ -8,7 +8,6 @@
     tools:context="de.torbennils.tictactoe.Main_Activity"
     tools:showIn="@layout/activity_main_">
 
-
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
