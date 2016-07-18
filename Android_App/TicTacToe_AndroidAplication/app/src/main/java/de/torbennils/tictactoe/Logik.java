@@ -36,10 +36,10 @@ public class Logik {
         if (anzahl==1){
             int i =(int)(Math.random()*10);
             if(i>5){
-                spieler_1 = new Ki("X");
+                spieler_1 = new KiCracy("X");
                 spieler_2 = new Spieler("O");
             }else{
-                spieler_1 = new Ki("O");
+                spieler_1 = new KiCracy("O");
                 spieler_2 = new Spieler("X");
             }
         }else if (anzahl==2){

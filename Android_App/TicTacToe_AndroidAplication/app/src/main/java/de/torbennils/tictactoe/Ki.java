@@ -5,11 +5,11 @@ package de.torbennils.tictactoe;
  */
 
 public class Ki extends Spieler{
-    private String name;
-    private String [][] zeichnen = {{" "," "," "},{" "," "," "},{" "," "," "}};
+    protected String name;
+    protected String [][] zeichnen = {{" "," "," "},{" "," "," "},{" "," "," "}};
     private boolean gezeichnet =false;
-    private int zeile = 10;
-    private int spalte = 10;
+    int zeile = 10;
+    protected int spalte = 10;
     private String name_nicht ;
     public Ki(String x_o) {
         super(x_o);
