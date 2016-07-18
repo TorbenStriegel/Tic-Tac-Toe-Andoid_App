@@ -50,7 +50,6 @@ public class TicTacToe_Activity extends AppCompatActivity {
         fab_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Zurück", Snackbar.LENGTH_LONG).setAction("Action", null).show();
                 finish();
             }
         });

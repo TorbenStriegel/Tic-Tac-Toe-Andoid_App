@@ -47,7 +47,6 @@
         app:layout_anchor="@+id/include"
         app:layout_anchorGravity="bottom|left"
         android:layout_gravity="center_vertical|right"
-        android:layout_margin="@dimen/fab_margin"
-        app:backgroundTint="@android:color/holo_red_light" />
+        android:layout_margin="@dimen/fab_margin" />
 
 </android.support.design.widget.CoordinatorLayout>

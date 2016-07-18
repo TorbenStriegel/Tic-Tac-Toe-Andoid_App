@@ -41,37 +41,58 @@ public class Main_Activity extends AppCompatActivity {
         spieler2 =  (EditText) findViewById(R.id.editText_Spieler2);
 
         final CheckBox checkBox1 = (CheckBox) findViewById(R.id.checkBox_KiAuswahl1);
+        final CheckBox checkBox2 = (CheckBox) findViewById(R.id.checkBox_KiAuswahl2);
+        final CheckBox checkBox3 = (CheckBox) findViewById(R.id.checkBox_KiAuswahl3);
         checkBox1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 auswahlKi1 = ((CheckBox) view).isChecked();
-                if (auswahlKi1){
+                if (auswahlKi1 || auswahlKi2 || auswahlKi3){
                     spieler2.setVisibility(View.INVISIBLE);
                 }else{
                     spieler2.setVisibility(View.VISIBLE);
                 }
-            }
+                if (auswahlKi1){
+                    checkBox2.setClickable(false);
+                    checkBox3.setClickable(false);
+                }else{
+                    checkBox2.setClickable(true);
+                    checkBox3.setClickable(true);
+                }
+           }
         });
-        final CheckBox checkBox2 = (CheckBox) findViewById(R.id.checkBox_KiAuswahl2);
         checkBox2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 auswahlKi2 = ((CheckBox) view).isChecked();
-                if (auswahlKi2){
+                if (auswahlKi1 || auswahlKi2 || auswahlKi3){
                     spieler2.setVisibility(View.INVISIBLE);
                 }else{
                     spieler2.setVisibility(View.VISIBLE);
                 }
+                if (auswahlKi2){
+                    checkBox1.setClickable(false);
+                    checkBox3.setClickable(false);
+                }else{
+                    checkBox1.setClickable(true);
+                    checkBox3.setClickable(true);
+                }
             }
         });
-        final CheckBox checkBox3 = (CheckBox) findViewById(R.id.checkBox_KiAuswahl3);
         checkBox3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 auswahlKi3 = ((CheckBox) view).isChecked();
-                if (auswahlKi3){
+                if (auswahlKi1 || auswahlKi2 || auswahlKi3){
                     spieler2.setVisibility(View.INVISIBLE);
                 }else{
                     spieler2.setVisibility(View.VISIBLE);
+                }
+                if (auswahlKi3){
+                    checkBox1.setClickable(false);
+                    checkBox2.setClickable(false);
+                }else{
+                    checkBox1.setClickable(true);
+                    checkBox2.setClickable(true);
                 }
             }
         });
@@ -114,8 +135,8 @@ public class Main_Activity extends AppCompatActivity {
     }
     /*++++++++++++++++++++++++++++++++++++++++++++++++++++++Methoden++++++++++++++++++++++++++++++++++++++++++++++++++++*/
     /*++++++++++++++++++++++++++++++++++++++++++++++++++++++Getter+++++++++++++++++++++++++++++++++++++++++++++++++++++*/
-    public static String getSpieler1(){ return spieler1.getText().toString(); }
-    public static String getSpieler2(){
+    public static String getSpieler1(){ return spieler1.getText().toString(); }  // Spielername 1
+    public static String getSpieler2(){  // Spielername 2
         if (auswahlKi1){
             return"Crazy";
         }if (auswahlKi2){
