@@ -41,10 +41,10 @@ public class TicTacToe_Activity extends AppCompatActivity {
             kiNummer = 0;
         }
         if (getKi2Auswahl()){
-            kiNummer = 2;
+            kiNummer = 1;
         }
         if (getKi3Auswahl()){
-            kiNummer = 3;
+            kiNummer = 2;
         }
         FloatingActionButton fab_back = (FloatingActionButton) findViewById(R.id.fab_back);
         fab_back.setOnClickListener(new View.OnClickListener() {
