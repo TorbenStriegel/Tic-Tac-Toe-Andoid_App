@@ -23,6 +23,8 @@ public class Logik {
     private Button[] buttons = null;
     private Buttons_Funktionen funktionen_buttons ;
     private Handler myHandler;
+    private boolean kisturn = false;
+    private boolean schongewonnenundübergeben = false;
 
     //**********************************************************************************************************
 
@@ -61,24 +63,26 @@ public class Logik {
         if(isValid(zeile,spalte)){
             if(isTHEREaKI()){
                 zustand = 1;
-                setzen(zeile,spalte);
+                if (!kisturn) {
+                    kisturn=true;
+                    setzen(zeile, spalte);
 
-                zeichnen_spieler(zeile,spalte,spieler_2);
+                    zeichnen_spieler(zeile, spalte, spieler_2);
 
-                if(!gewonnen()&&!(zustand_unentschieden>8)) {
+                    if (!gewonnen() && !(zustand_unentschieden > 8)) {
 
-                    setzen_Ki();
-                    myHandler.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            zeichnen_Ki();
-                        }
+                        setzen_Ki();
+                        myHandler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                zeichnen_Ki();
+                            }
 
-                    }, 500);
+                        }, 500);
+
+                    }
 
                 }
-
-
             }else{
                 if (zustand_spieler==0){
                     setzen(zeile,spalte);
@@ -98,7 +102,7 @@ public class Logik {
     }
 
     private void zeichnen_Ki() {
-
+        kisturn=false;
         if(zustand_gewonnen==0){
 
             if (spieler_1.getZeile() ==0&&spieler_1.getSpalte()==0){
@@ -455,16 +459,25 @@ public class Logik {
     }
 
     public boolean hatspieler1gewonnen(){
-        if (spieler_1.getName().equals("X")){
-            if (gewonnen_1()){
-                return true;
-            }else{
-                return false;
-            }
-        }else if(spieler_1.getName().equals("O")){
-            if (gewonnen_2()){
-                return true;
-            }else{
+        if (!schongewonnenundübergeben) {
+            if (spieler_1.getName().equals("X")) {
+                if (gewonnen_1()) {
+                    schongewonnenundübergeben=true;
+                    return true;
+
+                } else {
+                    return false;
+                }
+            } else if (spieler_1.getName().equals("O")) {
+                if (gewonnen_2()) {
+                    schongewonnenundübergeben=true;
+                    return true;
+
+                } else {
+                    return false;
+                }
+
+            } else {
                 return false;
             }
 
@@ -472,21 +485,29 @@ public class Logik {
             return false;
         }
     }
-    public boolean hatspieler2gewonnen(){
-        if (spieler_2.getName().equals("X")){
-            if (gewonnen_1()){
-                return true;
-            }else{
-                return false;
-            }
-        }else if(spieler_2.getName().equals("O")){
-            if (gewonnen_2()){
-                return true;
-            }else{
-                return false;
-            }
+    public boolean hatspieler2gewonnen() {
+        if (!schongewonnenundübergeben) {
+            if (spieler_2.getName().equals("X")) {
+                if (gewonnen_1()) {
+                    schongewonnenundübergeben = true;
+                    return true;
 
-        }else{
+                } else {
+                    return false;
+                }
+            } else if (spieler_2.getName().equals("O")) {
+                if (gewonnen_2()) {
+                    schongewonnenundübergeben = true;
+                    return true;
+
+                } else {
+                    return false;
+                }
+
+            } else {
+                return false;
+            }
+        }else {
             return false;
         }
     }
