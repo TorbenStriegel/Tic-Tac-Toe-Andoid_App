@@ -26,6 +26,8 @@ public class Logik {
     private boolean kisturn = false;
     private boolean schongewonnenundubergeben = false;
     private int werstartet;
+    private int weristdran;//wenn spieler 1(ki) dran dann 2 übergeben
+
 
     //**********************************************************************************************************
 
@@ -55,8 +57,9 @@ public class Logik {
                 spieler_2 = new Spieler("X");
             }
         }
-
+            weristdran=1;
         if (werstartet>=5){
+            weristdran =2;
             zustand=1;
             kisturn=true;
             setzen_Ki();
@@ -68,6 +71,7 @@ public class Logik {
 
             }, 250);
         }
+        funktionen_buttons.setWerIstDran(weristdran);
     }
 
 
@@ -146,7 +150,8 @@ public class Logik {
             if (spieler_1.getZeile() ==2&&spieler_1.getSpalte()==2){
                 funktionen_buttons.setText(buttons[8],spieler_1.getName());
             }
-
+            weristdran=1;
+            funktionen_buttons.setWerIstDran(weristdran);
             zustand_unentschieden++;
         }
         if(gewonnen()){
@@ -208,7 +213,8 @@ public class Logik {
             if (zeile_zeichnen ==2&&spalte_zeichnen==2){
                 funktionen_buttons.setText(buttons[8],i.getName());
             }
-
+            weristdran=1;
+            funktionen_buttons.setWerIstDran(weristdran);
             zustand_unentschieden++;
         }
         if(gewonnen()){
