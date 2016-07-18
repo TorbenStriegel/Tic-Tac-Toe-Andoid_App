@@ -191,6 +191,34 @@ public class Kibesser extends Ki {
         }
 
 
+        if(!gezeichnet){
+            int j = (int) (Math.random()*3);
+            int k = (int) (Math.random()*3);
+
+            if(zeichnen[j][k].equals(" ")){
+                zeichnen[j][k] = name;
+                zeile = j;
+                spalte = k;
+            }else{
+
+                while (!(zeichnen[j][k].equals(" "))){
+
+                    j = (int) (Math.random()*3);
+                    k = (int) (Math.random()*3);
+                    if(zeichnen[j][k].equals(" ")){
+                        zeichnen[j][k] = name;
+                        zeile = j;
+                        spalte = k;
+                        break;
+
+                    }
+
+                }
+
+            }
+        }
+
+
 
     }
 
