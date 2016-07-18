@@ -166,14 +166,14 @@ public class Logik {
     private void setzen(int zeile_setzen, int spalte_setzen){
 
         if (zustand==0) {
-            spieler_1.setString(array_spielfeld);
-            spieler_1.setzten(zeile_setzen,spalte_setzen);
-            array_spielfeld=spieler_1.getString();
-            zustand++;
-        }else if (zustand==1){
             spieler_2.setString(array_spielfeld);
             spieler_2.setzten(zeile_setzen,spalte_setzen);
             array_spielfeld=spieler_2.getString();
+            zustand++;
+        }else if (zustand==1){
+            spieler_1.setString(array_spielfeld);
+            spieler_1.setzten(zeile_setzen,spalte_setzen);
+            array_spielfeld=spieler_1.getString();
             zustand--;
         }
 
