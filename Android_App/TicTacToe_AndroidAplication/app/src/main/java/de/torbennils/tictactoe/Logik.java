@@ -123,12 +123,14 @@ public class Logik {
                 if (zustand_spieler==0){
                     setzen(zeile,spalte);
                     zeichnen_spieler(zeile,spalte,spieler_1);
-                    
+                    weristdran=2;
+                    textView_funktionen.setWerIstDran(weristdran);
                     zustand_spieler ++;
                 }else{
                     setzen(zeile,spalte);
                     zeichnen_spieler(zeile,spalte,spieler_2);
-                   
+                    weristdran=1;
+                    textView_funktionen.setWerIstDran(weristdran);
                     zustand_spieler --;
                 }
 
