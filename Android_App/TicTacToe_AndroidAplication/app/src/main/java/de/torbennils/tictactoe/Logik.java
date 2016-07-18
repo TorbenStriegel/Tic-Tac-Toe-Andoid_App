@@ -25,12 +25,14 @@ public class Logik {
     private Handler myHandler;
     private boolean kisturn = false;
     private boolean schongewonnenundubergeben = false;
+    private int werstartet;
 
     //**********************************************************************************************************
 
     public Logik(int anzahl, TicTacToe_Activity main, Buttons_Funktionen funktionen_buttons ){
         this.main = main;
         this.funktionen_buttons = funktionen_buttons;
+        werstartet = (int) (Math.random()*10);
         setButtons();
         myHandler=new Handler();
         if (anzahl==1){
@@ -63,24 +65,44 @@ public class Logik {
         if(isValid(zeile,spalte)){
             if(isTHEREaKI()){
                 zustand = 1;
-                if (!kisturn) {
-                    kisturn=true;
-                    setzen(zeile, spalte);
+                if (werstartet<5) {
+                    if (!kisturn) {
+                        kisturn = true;
+                        setzen(zeile, spalte);
 
-                    zeichnen_spieler(zeile, spalte, spieler_2);
+                        zeichnen_spieler(zeile, spalte, spieler_2);
 
-                    if (!gewonnen() && !(zustand_unentschieden > 8)) {
+                        if (!gewonnen() && !(zustand_unentschieden > 8)) {
 
-                        setzen_Ki();
-                        myHandler.postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                zeichnen_Ki();
-                            }
+                            setzen_Ki();
+                            myHandler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    zeichnen_Ki();
+                                }
 
-                        }, 500);
+                            }, 500);
+
+                        }
 
                     }
+                }else if(werstartet>=5){
+                    setzen_Ki();
+                    myHandler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            zeichnen_Ki();
+                        }
+
+                    }, 500);
+
+                    if (!kisturn) {
+                        kisturn = true;
+                        setzen(zeile, spalte);
+
+                        zeichnen_spieler(zeile, spalte, spieler_2);
+                    }
+
 
                 }
             }else{
