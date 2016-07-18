@@ -165,7 +165,6 @@ public class Buttons_Funktionen {
 
     public void gewonnen(){
         logik=tictactoe_activity.getReferenzLogik();
-        if (getKi1Auswahl()){
             if(logik.hatspieler2gewonnen()){
                 spieler1++;
                 textView_funktionen.setText_textViewSpieler1(getSpieler1()+":\n"+spieler1);
@@ -173,16 +172,7 @@ public class Buttons_Funktionen {
                 spieler2++;
                 textView_funktionen.setText_textViewSpieler2(getSpieler2()+":\n"+spieler2);
             }
-        }else{
-            if(logik.hatspieler1gewonnen()){
-                spieler1++;
-                textView_funktionen.setText_textViewSpieler1(getSpieler1()+":\n"+spieler1);
-            }else if(logik.hatspieler2gewonnen()){
-                spieler2++;
-                textView_funktionen.setText_textViewSpieler2(getSpieler2()+":\n"+spieler2);
-            }
         }
-    }
     /*++++++++++++++++++++++++++++++++++++++++++++++++++++++Getter+++++++++++++++++++++++++++++++++++++++++++++++++++++*/
     public Button[] getButtonArray() {
         return buttons;
