@@ -1,16 +1,13 @@
 package de.torbennils.tictactoe;
 
-import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
-
 import static de.torbennils.tictactoe.Main_Activity.getKiAuswahl;
 
 public class TicTacToe_Activity extends AppCompatActivity {
@@ -33,7 +30,7 @@ public class TicTacToe_Activity extends AppCompatActivity {
 
         if (getKiAuswahl()){
             anzahlSpieler = 1;
-        }else{
+        } else{
             anzahlSpieler = 2;
         }
         FloatingActionButton fab_back = (FloatingActionButton) findViewById(R.id.fab_back);
@@ -48,14 +45,19 @@ public class TicTacToe_Activity extends AppCompatActivity {
 
         textView_funktionen = new TextView_Funktionen(this);
         buttons_funktionen = new Buttons_Funktionen(this,anzahlButtons,textView_funktionen); //Refernz this, Anzahl der Buttons, Refernz auf TextView_Funktionen
-        logik = new Logik(anzahlSpieler, this, buttons_funktionen); //Anzahl Spieler, Refernz this, Refernz auf Buttons_Funktionen
+        logik = new Logik(anzahlSpieler, 1,this, buttons_funktionen, textView_funktionen); //Anzahl Spieler, Art der Ki, Refernz this, Refernz auf Buttons_Funktionen, Referenz auf TextView_Funktionen
 
     }
-
+    @Override
+    public void onConfigurationChanged(Configuration newConfig)             // Nicht drehbar
+    {
+        super.onConfigurationChanged(newConfig);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+    }
     /*++++++++++++++++++++++++++++++++++++++++++++++++++++++Methoden++++++++++++++++++++++++++++++++++++++++++++++++++++*/
     /*++++++++++++++++++++++++++++++++++++++++++++++++++++++Setter+++++++++++++++++++++++++++++++++++++++++++++++++++++*/
     public void setNewRefernzLogik(){
-        logik = new Logik(anzahlSpieler, this, buttons_funktionen);
+        logik = new Logik(anzahlSpieler, 1,this, buttons_funktionen, textView_funktionen);
     }
     /*++++++++++++++++++++++++++++++++++++++++++++++++++++++Getter+++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 

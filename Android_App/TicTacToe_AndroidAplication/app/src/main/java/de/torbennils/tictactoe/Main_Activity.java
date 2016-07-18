@@ -2,6 +2,8 @@ package de.torbennils.tictactoe;
 
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -20,7 +22,10 @@ public class Main_Activity extends AppCompatActivity {
 
     private static String spielerName1 = "";
     private static String spielerName2 = "";
-    private static boolean auswahlKi = true;
+    private static boolean auswahlKi = false;
+    private static boolean auswahlKi1 = false;
+    private static boolean auswahlKi2 = false;
+    private static boolean auswahlKi3 = false;
     static EditText spieler1 = null;
     static EditText spieler2 = null;
 
@@ -34,13 +39,28 @@ public class Main_Activity extends AppCompatActivity {
         Toast.makeText(this, "© Torben und Nils".toString(), Toast.LENGTH_LONG).show();
         spieler1 =  (EditText) findViewById(R.id.editText_Spieler1);
         spieler2 =  (EditText) findViewById(R.id.editText_Spieler2);
-        final CheckBox checkBox = (CheckBox) findViewById(R.id.checkBox_KiAuswahl);
-        checkBox.setOnClickListener(new View.OnClickListener() {
-            @Override
+
+        final CheckBox checkBox1 = (CheckBox) findViewById(R.id.checkBox_KiAuswahl1);
+        checkBox1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                auswahlKi = ((CheckBox) view).isChecked();
+                auswahlKi1 = ((CheckBox) view).isChecked();
             }
         });
+        final CheckBox checkBox2 = (CheckBox) findViewById(R.id.checkBox_KiAuswahl2);
+        checkBox2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                auswahlKi2 = ((CheckBox) view).isChecked();
+            }
+        });
+        final CheckBox checkBox3 = (CheckBox) findViewById(R.id.checkBox_KiAuswahl3);
+        checkBox3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                auswahlKi3 = ((CheckBox) view).isChecked();
+            }
+        });
+
         FloatingActionButton fab_start = (FloatingActionButton) findViewById(R.id.fab_start);
         fab_start.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,18 +69,7 @@ public class Main_Activity extends AppCompatActivity {
                 startActivity(ticTacToe_Activity);
             }
         });
-    }
-
-    public static String getSpieler1(){ return spieler1.getText().toString(); }
-    public static String getSpieler2(){
-        if (auswahlKi){
-            return"Dein Handy";
-        }else{
-            return spieler2.getText().toString();
-        }
-    }
-    public static boolean getKiAuswahl(){
-        return auswahlKi;
+        spieler2.visibil
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -82,5 +91,43 @@ public class Main_Activity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    public void onConfigurationChanged(Configuration newConfig)             // Nicht drehbar
+    {
+        super.onConfigurationChanged(newConfig);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+    }
+    /*++++++++++++++++++++++++++++++++++++++++++++++++++++++Methoden++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    /*++++++++++++++++++++++++++++++++++++++++++++++++++++++Getter+++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    public static String getSpieler1(){ return spieler1.getText().toString(); }
+    public static String getSpieler2(){
+        if (auswahlKi1){
+            return"Crazy";
+        }if (auswahlKi2){
+            return"Dein Handy";
+        }if (auswahlKi3){
+            return"Boss";
+        }else{
+            return spieler2.getText().toString();
+        }
+    }
+
+    public static boolean getKiAuswahl(){
+        if (auswahlKi1 || auswahlKi2 || auswahlKi3){
+            auswahlKi = true;
+        }else{
+            auswahlKi = false;
+        }
+        return auswahlKi;
+    }
+
+    public static boolean getKi1Auswahl(){
+        return auswahlKi1;
+    }
+    public static boolean getKi2Auswahl(){
+        return auswahlKi2;
+    }
+    public static boolean getKi3Auswahl(){
+        return auswahlKi3;
     }
 }

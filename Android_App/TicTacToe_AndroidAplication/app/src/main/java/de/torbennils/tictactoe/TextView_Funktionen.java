@@ -1,5 +1,6 @@
 package de.torbennils.tictactoe;
 
+import android.graphics.Color;
 import android.widget.TextView;
 
 import static de.torbennils.tictactoe.Main_Activity.getSpieler1;
@@ -36,6 +37,15 @@ public class TextView_Funktionen {
     }
     public void setText_textViewSpieler2(String text){
         textViewSpieler2.setText(text);
+    }
+
+    public void setWerIstDran(int a){
+        if (a == 1){
+            textViewSpieler1.setBackgroundColor(Color.DKGRAY);
+        }
+        if (a == 2){
+            textViewSpieler2.setBackgroundColor(Color.DKGRAY);
+        }
     }
     /*++++++++++++++++++++++++++++++++++++++++++++++++++++++Getter+++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 }

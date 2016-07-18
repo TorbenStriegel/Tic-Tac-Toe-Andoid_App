@@ -2,5 +2,6 @@
     <string name="app_name">TicTacToe</string>
     <string name="action_settings">Platzhalter</string>
     <string name="title_activity_tic_tac_toe_">TicTacToe</string>
-    <string name="Ki_Auswahl">gegen mein Handy :D</string>
+    <string name="Spieler_Auswahl">Gib deinen Namen und den deines Mitspielers ein:</string>
+    <string name="KI_Auswahl">oder wähle einen KI aus:</string>
 </resources>

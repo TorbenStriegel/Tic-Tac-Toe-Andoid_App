@@ -26,8 +26,8 @@ public class Logik {
     private boolean kisturn = false;
     private boolean schongewonnenundubergeben = false;
     private int werstartet;
-    private int weristdran;//wenn spieler 1(ki) dran dann 2 übergeben
-private TextView_Funktionen textView_funktionen;
+    private int weristdran;//wenn spieler 1(ki) dran dann 2 uebergeben
+    private TextView_Funktionen textView_funktionen;
 
     //**********************************************************************************************************
 
@@ -485,7 +485,6 @@ private TextView_Funktionen textView_funktionen;
 
     public String getSpieler1name(){
         return spieler_2.getName();
-
     }
 
     public String getSpieler2name(){

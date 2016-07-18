@@ -45,7 +45,7 @@
                 android:textAllCaps="false"
                 android:textAlignment="center"
                 android:textColorLink="?attr/colorControlActivated"
-                android:textColor="@color/colorPrimary" />
+                android:textColor="@android:color/holo_green_dark" />
 
             <ImageView
                 android:layout_width="wrap_content"

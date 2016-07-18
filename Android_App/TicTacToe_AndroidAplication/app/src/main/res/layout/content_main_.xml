@@ -19,6 +19,13 @@
             android:layout_width="match_parent"
             android:layout_height="58dp" />
 
+        <TextView
+            android:text="TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            tools:text="@string/Spieler_Auswahl" />
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -39,19 +46,37 @@
             android:focusable="true"
             android:focusableInTouchMode="true" />
 
-        <CheckBox
-            android:text="gegen dein Handy :D"
+        <TextView
+            android:text="@string/KI_Auswahl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/checkBox_KiAuswahl"
+            android:id="@+id/textView" />
+
+        <CheckBox
+            android:text="ff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox_KiAuswahl1"
             android:duplicateParentState="true"
             android:checked="true" />
+
+        <CheckBox
+            android:text="CheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox_KiAuswahl2" />
+
+        <CheckBox
+            android:text="CheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox_KiAuswahl3" />
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:srcCompat="@mipmap/ic_launcher"
             android:id="@+id/imageView2"
-            android:layout_weight="0.94" />
+            android:layout_weight="0.50" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
