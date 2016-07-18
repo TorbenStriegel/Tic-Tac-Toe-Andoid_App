@@ -32,7 +32,8 @@ public class Logik {
     public Logik(int anzahl, TicTacToe_Activity main, Buttons_Funktionen funktionen_buttons ){
         this.main = main;
         this.funktionen_buttons = funktionen_buttons;
-        werstartet = (int) (Math.random()*10);
+        werstartet =  (int)(Math.random()*10);
+
         setButtons();
         myHandler=new Handler();
         if (anzahl==1){
@@ -55,7 +56,17 @@ public class Logik {
             }
         }
 
+        if (werstartet>=5){
+            kisturn=true;
+            setzen_Ki();
+            myHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    zeichnen_Ki();
+                }
 
+            }, 250);
+        }
     }
 
 
@@ -65,7 +76,7 @@ public class Logik {
         if(isValid(zeile,spalte)){
             if(isTHEREaKI()){
                 zustand = 1;
-                if (werstartet<5) {
+
                     if (!kisturn) {
                         kisturn = true;
                         setzen(zeile, spalte);
@@ -86,25 +97,7 @@ public class Logik {
                         }
 
                     }
-                }else if(werstartet>=5){
-                    setzen_Ki();
-                    myHandler.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            zeichnen_Ki();
-                        }
 
-                    }, 500);
-
-                    if (!kisturn) {
-                        kisturn = true;
-                        setzen(zeile, spalte);
-
-                        zeichnen_spieler(zeile, spalte, spieler_2);
-                    }
-
-
-                }
             }else{
                 if (zustand_spieler==0){
                     setzen(zeile,spalte);
