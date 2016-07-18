@@ -27,24 +27,37 @@ public class Logik {
     private boolean schongewonnenundubergeben = false;
     private int werstartet;
     private int weristdran;//wenn spieler 1(ki) dran dann 2 übergeben
-
+private TextView_Funktionen textView_funktionen;
 
     //**********************************************************************************************************
 
-    public Logik(int anzahl, TicTacToe_Activity main, Buttons_Funktionen funktionen_buttons ){
+    public Logik(int anzahl,int art, TicTacToe_Activity main, Buttons_Funktionen funktionen_buttons,TextView_Funktionen textView_funktionen ){
         this.main = main;
         this.funktionen_buttons = funktionen_buttons;
         werstartet =  (int)(Math.random()*10);
-
+        this.textView_funktionen = textView_funktionen;
         setButtons();
         myHandler=new Handler();
         if (anzahl==1){
             int i =(int)(Math.random()*10);
             if(i>5){
-                spieler_1 = new Kibesser("X");
+                if (art==0){
+                    spieler_1 = new KiCracy("X");
+                }else if(art==1){
+                    spieler_1 =new Ki("X");
+                }else if(art==2){
+                    spieler_1 =new Kibesser("X");
+                }
                 spieler_2 = new Spieler("O");
             }else{
-                spieler_1 = new Kibesser("O");
+                if (art==0){
+                    spieler_1 = new KiCracy("O");
+                }else if(art==1){
+                    spieler_1 =new Ki("O");
+                }else if(art==2){
+                    spieler_1 =new Kibesser("O");
+
+                }
                 spieler_2 = new Spieler("X");
             }
         }else if (anzahl==2){
@@ -71,7 +84,7 @@ public class Logik {
 
             }, 250);
         }
-        funktionen_buttons.setWerIstDran(weristdran);
+        textView_funktionen.setWerIstDran(weristdran);
     }
 
 
@@ -151,7 +164,7 @@ public class Logik {
                 funktionen_buttons.setText(buttons[8],spieler_1.getName());
             }
             weristdran=1;
-            funktionen_buttons.setWerIstDran(weristdran);
+            textView_funktionen.setWerIstDran(weristdran);
             zustand_unentschieden++;
         }
         if(gewonnen()){
@@ -214,7 +227,7 @@ public class Logik {
                 funktionen_buttons.setText(buttons[8],i.getName());
             }
             weristdran=2;
-            funktionen_buttons.setWerIstDran(weristdran);
+            textView_funktionen.setWerIstDran(weristdran);
             zustand_unentschieden++;
         }
         if(gewonnen()){
@@ -342,7 +355,7 @@ public class Logik {
                x++;
                ubergeben[x]=buttons[2];
                x=0;
-                i = Color.RED;
+                if (){
             }else if ((array_spielfeld[1][0].equals(name))&&(array_spielfeld[1][1].equals(name))&&(array_spielfeld[1][2].equals(name))){
                 ubergeben[x]=buttons[3];
                 x++;
