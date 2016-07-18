@@ -57,6 +57,7 @@ public class Logik {
         }
 
         if (werstartet>=5){
+            zustand=1;
             kisturn=true;
             setzen_Ki();
             myHandler.postDelayed(new Runnable() {
