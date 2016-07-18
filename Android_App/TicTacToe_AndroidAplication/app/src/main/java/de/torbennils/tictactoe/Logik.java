@@ -213,7 +213,7 @@ public class Logik {
             if (zeile_zeichnen ==2&&spalte_zeichnen==2){
                 funktionen_buttons.setText(buttons[8],i.getName());
             }
-            weristdran=1;
+            weristdran=2;
             funktionen_buttons.setWerIstDran(weristdran);
             zustand_unentschieden++;
         }
