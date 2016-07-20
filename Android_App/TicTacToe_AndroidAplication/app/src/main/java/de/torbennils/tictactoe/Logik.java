@@ -74,6 +74,7 @@ public class Logik {
         if (werstartet>=5) {
             weristdran = 2;
             zustand = 0;
+            zustand_spieler=1;
 
             if (spieler_1 instanceof Ki||spieler_1 instanceof Kibesser|| spieler_1 instanceof KiCracy ) {
                 kisturn = true;
@@ -87,6 +88,7 @@ public class Logik {
                 }, 500);
             }
         }
+        funktionen_buttons.setSpielerName(spieler_2.getName(),spieler_1.getName());
         textView_funktionen.setWerIstDran(weristdran);
     }
 
@@ -94,7 +96,7 @@ public class Logik {
     //**********************************************************************************************************
 
     public void setPosition(int zeile ,int spalte){
-        if(isValid(zeile,spalte)){
+        if(isValid(zeile,spalte)&&!gewonnen()){
             if(isTHEREaKI()){
                 zustand = 0;
 
@@ -122,13 +124,13 @@ public class Logik {
             }else{
                 if (zustand_spieler==0){
                     setzen(zeile,spalte);
-                    zeichnen_spieler(zeile,spalte,spieler_1);
+                    zeichnen_spieler(zeile,spalte,spieler_2);
                     weristdran=2;
                     textView_funktionen.setWerIstDran(weristdran);
                     zustand_spieler ++;
                 }else{
                     setzen(zeile,spalte);
-                    zeichnen_spieler(zeile,spalte,spieler_2);
+                    zeichnen_spieler(zeile,spalte,spieler_1);
                     weristdran=1;
                     textView_funktionen.setWerIstDran(weristdran);
                     zustand_spieler --;
@@ -488,7 +490,7 @@ public class Logik {
         }
             
 
-    public String getSpieler1name(){
+    public String getSpieler1name() {
         return spieler_2.getName();
     }
 
