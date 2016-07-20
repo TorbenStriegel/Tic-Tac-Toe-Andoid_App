@@ -1,8 +1,18 @@
 <resources>
-    <string name="app_name">TicTacToe</string>
-    <string name="action_settings">Platzhalter</string>
-    <string name="title_activity_tic_tac_toe_">TicTacToe</string>
+    <string name="app_name" translatable="false">TicTacToe</string>
+
     <string name="Spieler_Auswahl">Gib deinen Namen und den deines Mitspielers ein:</string>
     <string name="KI_Auswahl">oder wähle einen KI aus:</string>
-    <string name="banner_ad_unit_id">ca-app-pub-9696423372227224/5350599197</string>
+    <string name="Spieler1">Spieler 1</string>
+    <string name="Spieler2">Spieler 2</string>
+
+    <string name="Starttext">Los geht´s!</string>
+    <string name="title_activity_tic_tac_toe_" translatable="false">TicTacToe</string>
+
+
+
+    <string name="title_activity_settings_">Einstellungen</string>
+
+    <string name="advertisment">Werbebanner</string>
+    <string name="settings">Einstellungen</string>
 </resources>

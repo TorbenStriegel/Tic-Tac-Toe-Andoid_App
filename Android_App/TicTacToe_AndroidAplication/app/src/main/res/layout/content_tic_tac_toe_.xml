@@ -22,7 +22,7 @@
             android:layout_height="59dp" />
 
         <TextView
-            android:text="Herzlich Wilkommen"
+            android:text="@string/Starttext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textView_spiel"

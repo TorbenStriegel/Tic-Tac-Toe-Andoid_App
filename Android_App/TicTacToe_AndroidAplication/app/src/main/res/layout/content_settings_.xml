@@ -8,4 +8,23 @@
     tools:context="de.torbennils.tictactoe.Settings_Activity"
     tools:showIn="@layout/activity_settings">
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:layout_weight="0.00" />
+
+        <TextView
+            android:text="Noch in bearbeitung!!!"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3" />
+
+    </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>

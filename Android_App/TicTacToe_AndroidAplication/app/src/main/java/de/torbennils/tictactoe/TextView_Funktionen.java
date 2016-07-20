@@ -41,13 +41,14 @@ public class TextView_Funktionen {
 
     public void setWerIstDran(int a){
         if (a == 1){
-            textViewSpieler1.setBackgroundColor(Color.DKGRAY);
+            textViewSpieler1.setBackgroundColor(Color.LTGRAY);
             textViewSpieler2.setBackgroundColor(Color.TRANSPARENT);
         }
         if (a == 2){
             textViewSpieler1.setBackgroundColor(Color.TRANSPARENT);
-            textViewSpieler2.setBackgroundColor(Color.DKGRAY);
+            textViewSpieler2.setBackgroundColor(Color.LTGRAY);
         }
     }
+
     /*++++++++++++++++++++++++++++++++++++++++++++++++++++++Getter+++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 }

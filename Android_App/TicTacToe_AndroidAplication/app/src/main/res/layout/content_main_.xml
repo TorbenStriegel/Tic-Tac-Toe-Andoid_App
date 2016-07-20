@@ -32,7 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="Spieler 1"
+            android:text="@string/Spieler1"
             android:ems="10"
             android:id="@+id/editText_Spieler1"
             android:focusable="true"
@@ -42,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="Spieler 2"
+            android:text="@string/Spieler2"
             android:ems="10"
             android:id="@+id/editText_Spieler2"
             android:focusable="true"
@@ -58,7 +58,7 @@
             android:textAlignment="center" />
 
         <CheckBox
-            android:text="Crazy"
+            android:text="Easy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/checkBox_KiAuswahl1"

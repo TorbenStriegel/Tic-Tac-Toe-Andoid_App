@@ -15,6 +15,8 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.apptracker.android.listener.AppModuleListener;
+import com.apptracker.android.track.AppTracker;
 
 public class Main_Activity extends AppCompatActivity {
 
@@ -32,8 +34,21 @@ public class Main_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_);
+        if(savedInstanceState == null) {                                // Werbung
+            // Initialize Leadbolt SDK with your api key
+            AppTracker.startSession(getApplicationContext(),"UrakQru4vYKJ4rfUtsqMea22IMwgjvZn",AppTracker.ENABLE_AUTO_CACHE);
+        }
+        // cache Leadbolt Ad without showing it
+        AppTracker.loadModuleToCache(getApplicationContext(),"inapp");
+        AppTracker.setAgeRange("18-25");
+        // Allowed values for Age range are: "13-17", "18-25", "26-35", "36-45", "46+"
+
+        AppTracker.setGender("Female");
+        // Allowed values for Gender are: "Male", "Female"
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        gameOver();
         Toast.makeText(this, "© Torben und Nils".toString(), Toast.LENGTH_LONG).show();
         spieler1 =  (EditText) findViewById(R.id.editText_Spieler1);
         spieler2 =  (EditText) findViewById(R.id.editText_Spieler2);
@@ -44,17 +59,14 @@ public class Main_Activity extends AppCompatActivity {
         checkBox1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 auswahlKi1 = ((CheckBox) view).isChecked();
-                if (auswahlKi1 || auswahlKi2 || auswahlKi3){
+                if (auswahlKi1){
                     spieler2.setVisibility(View.INVISIBLE);
                 }else{
                     spieler2.setVisibility(View.VISIBLE);
                 }
                 if (auswahlKi1){
-                    checkBox2.setClickable(false);
-                    checkBox3.setClickable(false);
-                }else{
-                    checkBox2.setClickable(true);
-                    checkBox3.setClickable(true);
+                    checkBox2.setChecked(false);
+                    checkBox3.setChecked(false);
                 }
            }
         });
@@ -62,17 +74,14 @@ public class Main_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 auswahlKi2 = ((CheckBox) view).isChecked();
-                if (auswahlKi1 || auswahlKi2 || auswahlKi3){
+                if (auswahlKi2){
                     spieler2.setVisibility(View.INVISIBLE);
                 }else{
                     spieler2.setVisibility(View.VISIBLE);
                 }
                 if (auswahlKi2){
-                    checkBox1.setClickable(false);
-                    checkBox3.setClickable(false);
-                }else{
-                    checkBox1.setClickable(true);
-                    checkBox3.setClickable(true);
+                    checkBox1.setChecked(false);
+                    checkBox3.setChecked(false);
                 }
             }
         });
@@ -80,17 +89,14 @@ public class Main_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 auswahlKi3 = ((CheckBox) view).isChecked();
-                if (auswahlKi1 || auswahlKi2 || auswahlKi3){
+                if (auswahlKi3){
                     spieler2.setVisibility(View.INVISIBLE);
                 }else{
                     spieler2.setVisibility(View.VISIBLE);
                 }
                 if (auswahlKi3){
-                    checkBox1.setClickable(false);
-                    checkBox2.setClickable(false);
-                }else{
-                    checkBox1.setClickable(true);
-                    checkBox2.setClickable(true);
+                    checkBox1.setChecked(false);
+                    checkBox2.setChecked(false);
                 }
             }
         });
@@ -113,18 +119,29 @@ public class Main_Activity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) {                       // Menü oben rechts
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.settings) {
+            Intent settings_Activity = new Intent(Main_Activity.this, Settings_Activity.class);
+            startActivity(settings_Activity);
+            return true;
+        }
+        if (id == R.id.advertisment) {
+            gameOver();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    public void gameOver() {                                                        // aufrufen wenn Werbung kommen soll
+        if (AppTracker.isAdReady("inapp")) {
+            AppTracker.loadModule(getApplicationContext(), "inapp");
+        }
     }
     public void onConfigurationChanged(Configuration newConfig)             // Nicht drehbar
     {
@@ -136,7 +153,7 @@ public class Main_Activity extends AppCompatActivity {
     public static String getSpieler1(){ return spieler1.getText().toString(); }  // Spielername 1
     public static String getSpieler2(){  // Spielername 2
         if (auswahlKi1){
-            return"Crazy";
+            return"Easy";
         }if (auswahlKi2){
             return"Normal";
         }if (auswahlKi3){

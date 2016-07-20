@@ -5,11 +5,8 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.widget.Button;
-
 import java.util.Random;
 
-import static de.torbennils.tictactoe.Main_Activity.getKi1Auswahl;
-import static de.torbennils.tictactoe.Main_Activity.getKiAuswahl;
 import static de.torbennils.tictactoe.Main_Activity.getSpieler1;
 import static de.torbennils.tictactoe.Main_Activity.getSpieler2;
 
@@ -25,6 +22,8 @@ public class Buttons_Funktionen {
     private Logik logik =null;
     private int spieler1 = 0;
     private int spieler2 = 0;
+    private String spielerName1 = "";
+    private String spielerName2 = "";
     private String textAusgabe = "";
 
     /*++++++++++++++++++++++++++++++++++++++++++++++++++++++Konstruktor++++++++++++++++++++++++++++++++++++++++++++++++++++*/
@@ -162,15 +161,21 @@ public class Buttons_Funktionen {
 
     }
 
+    public void setSpielerName(String spielerName1, String spielerName2) {
+        this.spielerName1 = spielerName1;
+        this.spielerName2 = spielerName2;
+        textView_funktionen.setText_textViewSpieler1(getSpieler1()+"("+spielerName1+"):\n"+spieler1);
+        textView_funktionen.setText_textViewSpieler2(getSpieler2()+"("+spielerName2+"):\n"+spieler2);
+    }
 
     public void gewonnen(){
         logik=tictactoe_activity.getReferenzLogik();
             if(logik.hatspieler2gewonnen()){
                 spieler1++;
-                textView_funktionen.setText_textViewSpieler1(getSpieler1()+":\n"+spieler1);
+                textView_funktionen.setText_textViewSpieler1(getSpieler1()+"("+spielerName1+"):\n"+spieler1);
             }else if(logik.hatspieler1gewonnen()){
                 spieler2++;
-                textView_funktionen.setText_textViewSpieler2(getSpieler2()+":\n"+spieler2);
+                textView_funktionen.setText_textViewSpieler2(getSpieler2()+"("+spielerName2+"):\n"+spieler2);
             }
         }
     /*++++++++++++++++++++++++++++++++++++++++++++++++++++++Getter+++++++++++++++++++++++++++++++++++++++++++++++++++++*/
