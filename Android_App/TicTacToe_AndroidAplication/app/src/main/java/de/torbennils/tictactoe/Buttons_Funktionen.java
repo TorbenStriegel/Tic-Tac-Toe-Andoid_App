@@ -105,13 +105,13 @@ public class Buttons_Funktionen {
                 resetButtons();
                 int zufallsZahl = random.nextInt(3);
                 if (zufallsZahl == 0){
-                    textAusgabe = "Neue Runde neues Glück ;D";
+                    textAusgabe =  tictactoe_activity.getString(R.string.neueRunde1);;
                 }
                 if (zufallsZahl == 1){
-                    textAusgabe = "Kopf nicht hängen lassen :)";
+                    textAusgabe = tictactoe_activity.getString(R.string.neueRunde2);;;
                 }
                 if (zufallsZahl == 2){
-                    textAusgabe = "Weiter So!!!";
+                    textAusgabe = tictactoe_activity.getString(R.string.neueRunde3);;;
                 }
                 if (zufallsZahl == 3){
                     textAusgabe = getSpieler1()+" vor, noch ein Tor!";

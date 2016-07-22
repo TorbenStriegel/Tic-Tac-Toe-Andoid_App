@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="de.torbennils.tictactoe.Settings_Activity">
+    tools:context="de.torbennils.tictactoe.Impressum_Activity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -21,7 +21,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_settings_"
+    <include layout="@layout/content_impressum_"
         android:id="@+id/include2" />
 
     <android.support.design.widget.FloatingActionButton

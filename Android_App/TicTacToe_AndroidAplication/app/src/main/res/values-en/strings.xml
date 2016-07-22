@@ -3,9 +3,13 @@
     <string name="KI_Auswahl">or choose a KI:</string>
     <string name="Spieler_Auswahl">Enter your name</string>
     <string name="advertisment">Banners</string>
-    <string name="settings">Settings</string>
-    <string name="title_activity_settings_">Settings</string>
     <string name="Starttext">Here we go!</string>
     <string name="Spieler1">Gamer 1</string>
     <string name="Spieler2">Gamer 2</string>
+    <string name="StartText">Here we go!</string>
+    <string name="impressum">Imprint</string>
+    <string name="neueRunde1">New round new luck ;D</string>
+    <string name="neueRunde2">" You can do it!"</string>
+    <string name="neueRunde3">Good luck :)</string>
+    <string name="title_activity_impressum_">Imprint</string>
 </resources>

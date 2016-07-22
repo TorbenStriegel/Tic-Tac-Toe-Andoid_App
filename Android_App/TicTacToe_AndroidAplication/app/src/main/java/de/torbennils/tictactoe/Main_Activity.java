@@ -61,6 +61,8 @@ public class Main_Activity extends AppCompatActivity {
                 auswahlKi1 = ((CheckBox) view).isChecked();
                 if (auswahlKi1){
                     spieler2.setVisibility(View.INVISIBLE);
+                    auswahlKi2 = false;
+                    auswahlKi3 = false;
                 }else{
                     spieler2.setVisibility(View.VISIBLE);
                 }
@@ -76,6 +78,8 @@ public class Main_Activity extends AppCompatActivity {
                 auswahlKi2 = ((CheckBox) view).isChecked();
                 if (auswahlKi2){
                     spieler2.setVisibility(View.INVISIBLE);
+                    auswahlKi1 = false;
+                    auswahlKi3 = false;
                 }else{
                     spieler2.setVisibility(View.VISIBLE);
                 }
@@ -91,6 +95,8 @@ public class Main_Activity extends AppCompatActivity {
                 auswahlKi3 = ((CheckBox) view).isChecked();
                 if (auswahlKi3){
                     spieler2.setVisibility(View.INVISIBLE);
+                    auswahlKi1 = false;
+                    auswahlKi2 = false;
                 }else{
                     spieler2.setVisibility(View.VISIBLE);
                 }
@@ -127,7 +133,7 @@ public class Main_Activity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.settings) {
-            Intent settings_Activity = new Intent(Main_Activity.this, Settings_Activity.class);
+            Intent settings_Activity = new Intent(Main_Activity.this, Impressum_Activity.class);
             startActivity(settings_Activity);
             return true;
         }

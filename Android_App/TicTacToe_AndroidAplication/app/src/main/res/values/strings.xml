@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name" translatable="false">TicTacToe</string>
+    <string name="StartText">Los geht´s!</string>
 
     <string name="Spieler_Auswahl">Gib deinen Namen und den deines Mitspielers ein:</string>
     <string name="KI_Auswahl">oder wähle einen KI aus:</string>
@@ -10,9 +11,13 @@
     <string name="title_activity_tic_tac_toe_" translatable="false">TicTacToe</string>
 
 
-
-    <string name="title_activity_settings_">Einstellungen</string>
-
     <string name="advertisment">Werbebanner</string>
-    <string name="settings">Einstellungen</string>
+    <string name="impressum">Impressum</string>
+
+    <string name="title_activity_impressum_">Impressum</string>
+
+    <string name="neueRunde1">Neue Runde neues Glück ;D</string>
+    <string name="neueRunde2">Das schaffst du!</string>
+    <string name="neueRunde3">Viel Glück :)</string>
+
 </resources>

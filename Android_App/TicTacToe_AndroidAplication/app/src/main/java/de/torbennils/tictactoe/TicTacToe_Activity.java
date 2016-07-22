@@ -28,7 +28,7 @@ public class TicTacToe_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tic_tac_toe_);
-        Toast.makeText(this, "Los geht´s!".toString(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, this.getString(R.string.StartText), Toast.LENGTH_SHORT).show();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
     /*+++++++++++++++++++++++++++++++++++++++++++++Abfragen von Daten aus Main_Activity++++++++++++++++++++++++++++++++++++++++++*/

@@ -32,8 +32,8 @@
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:hardwareAccelerated="false" />
         <activity
-            android:name=".Settings_Activity"
-            android:label="@string/title_activity_settings_"
+            android:name=".Impressum_Activity"
+            android:label="@string/title_activity_impressum_"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
